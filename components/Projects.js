@@ -33,6 +33,10 @@ function Projects() {
             img: "https://play-lh.googleusercontent.com/TBRwjS_qfJCSj1m7zZB93FnpJM5fSpMA_wUlFDLxWAb45T9RmwBvQd5cWR5viJJOhkI=s360-rw"
         },
         {
+            name: "Sheil Gandhi",
+            img: "/logo.png"
+        },
+        {
             name: "signal-clone",
             img: "https://play-lh.googleusercontent.com/jCln_XT8Ruzp7loH1S6yM-ZzzpLP1kZ3CCdXVEo0tP2w5HNtWQds6lo6aLxLIjiW_X8=s360-rw"
         },
@@ -63,22 +67,25 @@ function Projects() {
     ]
 
     return (
-        <div className="h-screen w-screen[-100px] bg-white flex">
+        <div className="h-screen w-screen[-100px] bg-gray-200 flex flex-col">
             {/* Header */}
-            <div className="flex items-start justify-evenly">
-                <h1 className="font-bold text-2xl break-words">Personal Projects</h1>
-                <div className="">
+            <div className="flex items-start justify-between p-10">
+                <h1 className="font-black text-3xl pl-10 text-red-500">Personal Projects</h1>
+                <div className="overflow-clip font-medium text-lg w-96">
                     <p>If you would like to see the source codes for these projects, please check my GitHub</p>
+                    <a className="text-red-500 cursor-pointer flex items-end" href="https://github.com/sheilgandhi/" target="_blank">
+                        Explore More<span className="text-3xl pl-4">&#8594;</span>
+                    </a>
                 </div>
             </div>
             {/* All the projects */}
-            <div className="">
+            <div className="flex flex-wrap items-center justify-center overflow-y-hidden">
             {
                 projects.length ? (
                     projects
                         .filter(cond => cond.private === false)
                         .map((project, index) => (
-                            <ProjectCard key={index} img={posters[index]?.img} name={project.name} desc={project.description} url={project.html_url} />         
+                            <ProjectCard key={index} img={posters[index]?.img} name={project.name} desc={project.description} url={project.html_url} />     
                         ))
                     ) : (
                         <div>

@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 function Header() {
     return (
-        <div className="w-screen[-100px] top-0 z-50 bg-white flex items-center p-10 h-10 shadow-md">
+        <div className="max-w-full top-0 z-50 bg-white flex items-center p-10 h-10 shadow-md">
             {/* Image */}
             <div className="flex items-center w-24 -ml-4 md:w-48 md:pl-20 lg:w-56">
                <Image src="/logo.png" alt="me" width={163} height={30} />

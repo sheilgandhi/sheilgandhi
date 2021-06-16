@@ -6,7 +6,7 @@ import AboutCard from './AboutCard';
 
 function About() {
     return (
-        <div className="w-screen max-w-full h-screen max-h-full">
+        <div className="max-w-full h-screen max-h-full">
             <div className="bg-gray-200 h-4/6"> 
                 <Skills />
                 <div className="flex flex-wrap items-start justify-around  mr-4">

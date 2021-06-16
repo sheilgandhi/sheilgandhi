@@ -7,7 +7,7 @@ import Image from "next/image";
 
 function Main() {
     return (
-        <div className="w-screen[-100px] h-screen">
+        <div className="max-w-full h-screen">
             <Header />
             <div className="flex flex-col p-16">
                 <div className="font-black text-8xl p-4">

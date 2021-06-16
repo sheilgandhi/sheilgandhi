@@ -79,7 +79,7 @@ function Projects() {
                 </div>
             </div>
             {/* All the projects */}
-            <div className="flex flex-wrap items-center justify-center overflow-hidden">
+            <div className="flex flex-row flex-wrap items-center justify-center overflow-x-scroll scrollbar-hide">
             {
                 projects.length ? (
                     projects

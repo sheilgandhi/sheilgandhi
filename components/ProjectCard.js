@@ -1,10 +1,15 @@
+import { ImageSharp } from "@material-ui/icons";
 import Image from "next/image";
 
 function ProjectCard({ img, name, desc, url }) {
     return (
         <div className="w-64 h-52 m-2 p-8 bg-white rounded-3xl shadow-lg justify-items-stretch">
             <div className="w-14">
+                {
+                    img ?
                 <Image src={img} alt={name} width={208} height={208} className="rounded-full object-contain -z-10" />
+                : <ImageSharp />
+}
             </div>
             <div className="flex flex-col">
                 <div className="flex items-center justify-between">

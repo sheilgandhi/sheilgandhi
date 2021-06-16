@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard";
 import axios from '../api/projects'
+import Image from "next/image";
 
 function Projects() {
     const [ projects, setProjects ] = useState([]);
@@ -89,7 +90,7 @@ function Projects() {
                         ))
                     ) : (
                         <div>
-                            Loading projects..
+                            <Image src="/ball.svg" width={50} height={50} />
                         </div>
                 )
             }

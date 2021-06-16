@@ -10,6 +10,7 @@ export default function Home() {
     <div className="max-w-full">
       <Head>
         <title>Sheil Gandhi</title>
+        <meta httpEquiv="ScreenOrientation" content="autoRotate:disabled"></meta>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet"></link>
       </Head>
       

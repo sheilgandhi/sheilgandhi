@@ -3,7 +3,7 @@ import Image from "next/image"
 
 function MediumCard({ img, name, desc, url, rating }) {
     return (
-        <div className="w-80 h-60 m-2 p-8 bg-white rounded-3xl shadow-lg justify-items-stretch">
+        <div className="w-80 h-60 m-2 p-8 bg-white shadow-lg justify-items-stretch">
             <div className="w-14">
                 {
                     img ?

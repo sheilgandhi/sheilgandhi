@@ -19,7 +19,8 @@ function Projects() {
     const posters = [
         {
             name: "airbnb-clone",
-            img: "https://play-lh.googleusercontent.com/1zfN_BL13q20v0wvBzMWiZ_sL_t4KcCJBeAMRpOZeT3p34quM-4-pO-VcLj8PJNXPA0"
+            img: "https://play-lh.googleusercontent.com/1zfN_BL13q20v0wvBzMWiZ_sL_t4KcCJBeAMRpOZeT3p34quM-4-pO-VcLj8PJNXPA0",
+            rating: 4.2
         },
         {
             name: "amazon-clone",
@@ -86,7 +87,7 @@ function Projects() {
                     projects
                         .filter(cond => cond.private === false)
                         .map((project, index) => (
-                            <ProjectCard key={index} img={posters[index]?.img} name={project.name} desc={project.description} url={project.html_url} />     
+                            <ProjectCard key={index} img={posters[index]?.img} name={project.name} desc={project.description} url={project.html_url} rating={posters[index]?.rating} />     
                         ))
                     ) : (
                         <div>

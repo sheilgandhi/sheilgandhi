@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react'
 import axios from '../api/posts'
-import ProjectCard from './ProjectCard';
+import MediumCard from './MediumCard';
 
 function Medium() {
     const [data, setData] = useState([])
@@ -26,13 +26,14 @@ function Medium() {
 
     return (
         <div className="flex flex-col max-w-full h-screen">
+            <div className="bg-gray-200 h-4/6 p-8">
             <h1 className="font-black text-6xl pl-10 pb-2 text-red-500">Medium</h1>
-            <p>Check out my posts!</p>
-            <div className="">
+            <p className="overflow-clip font-normal text-lg p-8 w-96">Check out my posts!</p>
+            <div className="flex flex-row flex-wrap items-center justify-center overflow-x-scroll scrollbar-hide">
             {
                 data.length ? (
                     data.map((post, index) => (
-                            <ProjectCard key={index} img={post?.thumbnail} name={post.title} desc={hasHTML(post.description)} url={post.link} />     
+                            <MediumCard key={index} img={post?.thumbnail} name={post.title} desc={hasHTML(post.description)} url={post.link} />     
                         ))
                     ) : (
                         <div>
@@ -40,6 +41,7 @@ function Medium() {
                         </div>
                 )
             }
+            </div>
             </div>
         </div>
     )

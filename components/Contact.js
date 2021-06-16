@@ -1,4 +1,4 @@
-function Reads() {
+function Contact() {
     return (
         <div>
             
@@ -6,4 +6,5 @@ function Reads() {
     )
 }
 
-export default Reads
+export default Contact
+

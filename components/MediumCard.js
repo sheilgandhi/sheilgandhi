@@ -1,9 +1,9 @@
-import { ImageSharp } from "@material-ui/icons";
-import Image from "next/image";
+import { ImageSharp } from "@material-ui/icons"
+import Image from "next/image"
 
-function ProjectCard({ img, name, desc, url, rating }) {
+function MediumCard({ img, name, desc, url, rating }) {
     return (
-        <div className="w-64 h-52 m-2 p-8 bg-white rounded-3xl shadow-lg justify-items-stretch">
+        <div className="w-80 h-60 m-2 p-8 bg-white rounded-3xl shadow-lg justify-items-stretch">
             <div className="w-14">
                 {
                     img ?
@@ -11,7 +11,7 @@ function ProjectCard({ img, name, desc, url, rating }) {
                 : <ImageSharp />
                 }
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col justify-aevenly">
                 <div className="flex items-center justify-between">
                     <h1 className="font-bold text-base">{name}</h1>
                     {
@@ -20,8 +20,8 @@ function ProjectCard({ img, name, desc, url, rating }) {
                     }
                 </div>
                 <p className="text-sm truncate">{desc}</p>
-                <div className="">
-                    <a href={url} target="_blank" className="bg-red-500 mt-2 p-2 flex items-center justify-center text-white font-bold w-28" >Follow Me</a>
+                <div className="mt-6">
+                    <a href={url} target="_blank" className="bg-red-500 p-2 flex items-center justify-center text-white font-bold w-28" >Read More</a>
                 </div>
             </div>
             
@@ -29,4 +29,4 @@ function ProjectCard({ img, name, desc, url, rating }) {
     )
 }
 
-export default ProjectCard
+export default MediumCard

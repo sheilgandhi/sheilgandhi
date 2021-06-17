@@ -25,11 +25,14 @@ function Medium() {
     }
 
     return (
-        <div className="flex flex-col max-w-full h-screen">
-            <div className="bg-gray-200 h-4/6 p-8">
-            <h1 className="font-black text-6xl pl-10 pb-2 text-red-500">Medium</h1>
-            <p className="overflow-clip font-normal text-lg p-8 w-96">Check out my posts!</p>
-            <div className="flex flex-row flex-wrap items-center justify-center overflow-x-scroll scrollbar-hide">
+        <div className="h-screen w-screen[-100px] max-h-screen bg-gray-200 flex flex-col">
+            {/* Header */}
+            <div className="flex items-start justify-between p-10">
+                    <h1 className="font-black text-6xl pl-10 pb-2 text-red-500">Medium</h1>
+                    <p className="overflow-clip font-normal text-lg p-8 w-96">Check out my posts!</p>
+            </div>
+            {/* Posts */}
+            <div className="flex flex-row flex-wrap items-center justify-center overflow-y-scroll scrollbar-hide">
             {
                 data.length ? (
                     data.map((post, index) => (
@@ -41,7 +44,6 @@ function Medium() {
                         </div>
                 )
             }
-            </div>
             </div>
         </div>
     )

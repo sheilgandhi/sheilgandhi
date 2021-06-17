@@ -15,11 +15,13 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet"></link>
       </Head>
       
-      <Main />
-      <About />
-      <Projects />
-      <Medium />
-      <Contact />
+      <main>
+        <Main />
+        <About />
+        <Projects />
+        <Medium />
+        <Contact />
+      </main>
     </div>
   )
 }

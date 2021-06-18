@@ -5,6 +5,7 @@ import CreateIcon from '@material-ui/icons/Create'; // Medium Icon
 import DescriptionIcon from '@material-ui/icons/Description'; // CV Icon
 import Image from "next/image";
 import Fade from 'react-reveal/Fade';
+import Link from 'next/link';
 
 function Main() {
     return (
@@ -22,9 +23,11 @@ function Main() {
                     <p>Full Stack Developer seeking Internship</p>
                     <p>Learn Create Grow - That’s My Motto</p>
                 </div>
+                <Link href="#projects">
                 <div className="flex items-center justify-center bg-red-500 ml-4 p-4 mt-4 w-56 cursor-pointer">
                     <p className="text-white text-lg font-medium">Explore My Work</p>
                 </div>
+                </Link>
                 </Fade>
                 <Fade right>
                 <div className="hidden md:inline-flex absolute bottom-0 right-0  bg-red-500 h-3/4 w-3/6 

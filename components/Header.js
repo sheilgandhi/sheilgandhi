@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 
 function Header() {
     return (
@@ -14,11 +15,21 @@ function Header() {
             </div>
             {/* Right */}   
             <div className="flex items-center sm:space-x-2 justify-end absolute right-0">
+                <Link href="/">
                 <p className="inline-flex text-smwhitespace-nowrap font-semibold px-3 cursor-pointer">Home</p>
+                </Link>
+                <Link href="#about">
                 <p className="inline-flex text-smwhitespace-nowrap font-semibold px-3 cursor-pointer">About</p>
+                </Link>
+                <Link href="#projects">
                 <p className="inline-flex text-smwhitespace-nowrap font-semibold px-3 cursor-pointer">Projects</p>
+                </Link>
+                <Link href="#medium">
                 <p className="inline-flex text-smwhitespace-nowrap font-semibold px-3 cursor-pointer">Medium</p>
+                </Link>
+                <Link href="#contact">
                 <p className="inline-flex text-smwhitespace-nowrap font-semibold px-3 cursor-pointer">Contact</p>
+                </Link>
             </div>
         </div>
     )

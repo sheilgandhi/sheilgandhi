@@ -15,9 +15,9 @@ function Header() {
             </div>
             {/* Right */}   
             <div className="flex items-center sm:space-x-2 justify-end absolute right-0">
-                <Link href="/">
+                {/* <Link href="/">
                 <p className="inline-flex text-smwhitespace-nowrap font-semibold px-3 cursor-pointer">Home</p>
-                </Link>
+                </Link> */}
                 <Link href="#about">
                 <p className="inline-flex text-smwhitespace-nowrap font-semibold px-3 cursor-pointer">About</p>
                 </Link>

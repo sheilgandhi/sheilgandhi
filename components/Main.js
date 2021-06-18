@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 function Main() {
     return (
-        <div className="max-w-full h-screen">
+        <div className="w-screen max-w-full h-screen">
             <Fade top>
             <Header />
             </Fade>

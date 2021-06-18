@@ -8,7 +8,7 @@ import Fade from 'react-reveal/Fade';
 
 function About() {
     return (
-        <div className="max-w-full h-screen max-h-full" id="about">
+        <div className="w-screen max-w-full h-screen max-h-full" id="about">
             <Fade bottom>
             <div className="bg-gray-200 h-4/6"> 
                 <Skills />

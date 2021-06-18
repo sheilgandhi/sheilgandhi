@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 function Contact() {
     return (
-        <div className="flex flex-row max-w-full h-screen" id="contact">
+        <div className="flex flex-row w-screen max-w-full h-screen" id="contact">
             <div className="hidden object-contain lg:inline-flex items-center justify-center w-3/5 bg-red-500">
                 <Pulse>
                     <Image src="/contact_still.svg" width={400} height={400} layout='intrinsic'/>

@@ -26,7 +26,7 @@ function Medium() {
     }
 
     return (
-        <div className="h-screen w-screen[-100px] max-h-screen bg-gray-200 flex flex-col" id="medium">
+        <div className="h-screen w-screen max-w-full max-h-screen bg-gray-200 flex flex-col" id="medium">
             {/* Header */}
             <Fade bottom>
             <div className="flex flex-col md:flex-row items-start justify-between p-10">

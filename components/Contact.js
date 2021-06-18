@@ -50,9 +50,9 @@ function Contact() {
                     <div className="my-3">
                         <form method="post" action="https://formsubmit.co/6cdebe3054ee699997e54cbc8bc37e9b">
                             <input type="hidden" name="_captcha" value="false" />
-                            <input type="text" placeholder="Your Name" required className="bg-red-100 text-xl font-thin p-4 border-transparent w-96 my-3" />
-                            <input type="email" placeholder="Your Email" required className="bg-red-100 text-xl font-thin p-4 border-transparent w-96 my-3" />
-                            <textarea placeholder="Project Details" required style={{ resize: 'none' }} className="bg-red-100 text-xl font-thin p-4 border-transparent w-96 h-40 my-3" />
+                            <input type="text" name="name" placeholder="Your Name" required className="bg-red-100 text-xl font-thin p-4 border-transparent w-96 my-3" />
+                            <input type="email" name="email" placeholder="Your Email Address" required className="bg-red-100 text-xl font-thin p-4 border-transparent w-96 my-3" />
+                            <textarea placeholder="Project Details" name="message" required style={{ resize: 'none' }} className="bg-red-100 text-xl font-thin p-4 border-transparent w-96 h-40 my-3" />
                             <div className="">
                                 <button className="flex items-center justify-center bg-red-500 p-4 my-3 w-56 cursor-pointer text-white text-lg font-medium">Send</button>
                             </div>

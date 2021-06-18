@@ -44,7 +44,7 @@ function Medium() {
             {
                 data.length ? (
                     data.map((post, index) => (
-                        <Fade right>
+                        <Fade right key={index}>
                             <MediumCard key={index} img={post?.thumbnail} name={post.title} desc={hasHTML(post.description)} url={post.link} />     
                         </Fade>
                         ))

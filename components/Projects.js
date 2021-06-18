@@ -101,7 +101,7 @@ function Projects() {
                     projects
                         .filter(cond => cond.private === false)
                         .map((project, index) => (
-                            <Fade right>
+                            <Fade right key={index}>
                                 <ProjectCard key={index} img={posters[index]?.img} name={project.name} desc={project.description} url={project.html_url} rating={posters[index]?.rating} />     
                             </Fade>
                         ))

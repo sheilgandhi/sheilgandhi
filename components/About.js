@@ -16,6 +16,7 @@ function About() {
                     <div className="px-5 pb-10 items-start">
                         <h1 className="text-red-500 font-black text-8xl">3<sup>rd</sup></h1>
                         <p className="font-bold text-2xl break-words">Year University Student</p>
+                        <p className="font-bold text-2xl break-words">@ Victoria University of Wellington</p>
                     </div>
                     <div className="px-5">
                         <h1 className="font-bold text-4xl">Fullstack Developer, Software and UX Engineer</h1>

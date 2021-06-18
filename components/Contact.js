@@ -1,12 +1,18 @@
 import Image from "next/image";
+import Pulse from 'react-reveal/Pulse';
+import RubberBand from 'react-reveal/RubberBand';
+
 
 function Contact() {
     return (
         <div className="flex flex-row max-w-full h-screen">
             <div className="hidden object-contain lg:inline-flex items-center justify-center w-4/6 bg-red-500">
-                <Image src="/contact_still.svg" width={400} height={400} layout='intrinsic'/>
+                <Pulse>
+                    <Image src="/contact_still.svg" width={400} height={400} layout='intrinsic'/>
+                </Pulse>
             </div>
-            <div className="w-80 flex flex-col items-start justify-start p-10">           
+            <div className="w-80 flex flex-col items-start justify-start p-10">     
+                <RubberBand>   
                 {/* Header */}
                 <div className="flex flex-col items-start justify-between">
                     <h1 className="font-black text-6xl pb-2 text-red-500">Let's Connect</h1>
@@ -23,6 +29,7 @@ function Contact() {
                         </div>
                     </div>
                 </div>
+                </RubberBand>   
             </div>
         </div>
     )

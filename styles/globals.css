@@ -14,5 +14,8 @@
       -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
     }
+    .main {
+      height: calc(100vh - 5rem);
+    }
   }
 }

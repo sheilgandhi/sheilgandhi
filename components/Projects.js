@@ -5,14 +5,14 @@ import Image from "next/image";
 import Fade from 'react-reveal/Fade';
 
 function Projects() {
-    const [ projects, setProjects ] = useState([]);
+    const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-      async function fetchData() {
-          const req = await axios.get('/sheilgandhi/repos');
-          setProjects(req.data)   
-      }
-      fetchData();
+        async function fetchData() {
+            const req = await axios.get('/sheilgandhi/repos');
+            setProjects(req.data)
+        }
+        fetchData();
     }, []);
 
     console.log(projects)
@@ -69,6 +69,16 @@ function Projects() {
             rating: 4.2
         },
         {
+            name: "uefa2020-clone",
+            img: "https://play-lh.googleusercontent.com/KzD0-hNjUKjVfZZFW7e-umsD8wAyD3RL0IfMdYStb06P9aK9jJjqPy6Zu33lWhI6dA=s360-rw",
+            rating: 4.5
+        },
+        {
+            name: "whatsapp-2.0-clone",
+            img: "https://play-lh.googleusercontent.com/bYtqbOcTYOlgc6gqZ2rwb8lptHuwlNE75zYJu6Bn076-hTmvd96HH-6v7S0YUAAJXoJN=s360-rw",
+            rating: 1.9
+        },
+        {
             name: "whatsapp-clone",
             img: "https://play-lh.googleusercontent.com/bYtqbOcTYOlgc6gqZ2rwb8lptHuwlNE75zYJu6Bn076-hTmvd96HH-6v7S0YUAAJXoJN=s360-rw",
             rating: 4.2
@@ -84,33 +94,33 @@ function Projects() {
         <div className="h-screen w-screen max-w-full max-h-screen bg-gray-200 flex flex-col" id="projects">
             {/* Header */}
             <Fade bottom>
-            <div className="flex flex-col md:flex-row items-start justify-between p-10">
-                <h1 className="font-black text-6xl pl-10 pb-2 text-red-500">Personal Projects</h1>
-                <div className="overflow-clip font-normal text-lg w-96">
-                    <p>If you would like to see the source codes for these projects, please check my GitHub</p>
-                    <a className="text-red-500 cursor-pointer flex items-end" href="https://github.com/sheilgandhi/" target="_blank">
-                        Explore More<span className="text-3xl pl-4">&#8594;</span>
-                    </a>
+                <div className="flex flex-col md:flex-row items-start justify-between p-10">
+                    <h1 className="font-black text-6xl pl-10 pb-2 text-red-500">Personal Projects</h1>
+                    <div className="overflow-clip font-normal text-lg w-96">
+                        <p>If you would like to see the source codes for these projects, please check my GitHub</p>
+                        <a className="text-red-500 cursor-pointer flex items-end" href="https://github.com/sheilgandhi/" target="_blank">
+                            Explore More<span className="text-3xl pl-4">&#8594;</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
             </Fade>
             {/* All the projects */}
             <div className="flex flex-row flex-wrap items-center justify-center overflow-x-scroll scrollbar-hide">
-            {
-                projects.length ? (
-                    projects
-                        .filter(cond => cond.private === false)
-                        .map((project, index) => (
-                            <Fade right key={index}>
-                                <ProjectCard key={index} img={posters[index]?.img} name={project.name} desc={project.description} url={project.html_url} rating={posters[index]?.rating} />     
-                            </Fade>
-                        ))
+                {
+                    projects.length ? (
+                        projects
+                            .filter(cond => cond.private === false)
+                            .map((project, index) => (
+                                <Fade right key={index}>
+                                    <ProjectCard key={index} img={posters[index]?.img} name={project.name} desc={project.description} url={project.html_url} rating={posters[index]?.rating} />
+                                </Fade>
+                            ))
                     ) : (
                         <div>
                             <Image src="/ball.svg" width={50} height={50} />
                         </div>
-                )
-            }
+                    )
+                }
             </div>
         </div>
     )

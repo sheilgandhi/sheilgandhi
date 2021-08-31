@@ -96,7 +96,7 @@ function Projects() {
             <Fade bottom>
                 <div className="flex flex-col md:flex-row items-start justify-between p-10">
                     <h1 className="font-black text-6xl pl-10 pb-2 text-red-500">Personal Projects</h1>
-                    <div className="overflow-clip font-normal text-lg w-96">
+                    <div className="overflow-clip font-normal text-lg">
                         <p>If you would like to see the source codes for these projects, please check my GitHub</p>
                         <a className="text-red-500 cursor-pointer flex items-end" href="https://github.com/sheilgandhi/" target="_blank">
                             Explore More<span className="text-3xl pl-4">&#8594;</span>

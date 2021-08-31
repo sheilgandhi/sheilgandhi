@@ -10,13 +10,13 @@ import Link from 'next/link';
 function Main() {
     return (
         <div className="w-full main">
-            <div className="flex flex-col p-16">
+            <div className="flex flex-col p-8 md:p-16">
                 <Fade left>
-                    <div className="font-black text-8xl p-4">
+                    <div className="font-black text-6xl md:text-8xl p-4">
                         <h1>Sheil</h1>
                         <h1>Gandhi</h1>
                     </div>
-                    <div className="font-medium text-lg p-4 text-nowrap">
+                    <div className="font-medium text-base md:text-lg p-4 text-nowrap">
                         <p>Full Stack Developer seeking Internship</p>
                         <p>Learn Create Grow - That’s My Motto</p>
                     </div>

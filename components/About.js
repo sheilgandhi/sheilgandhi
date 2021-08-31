@@ -21,8 +21,8 @@ function About() {
                     <div className="px-5">
                         <h1 className="font-bold text-4xl">Fullstack Developer, Software and UX Engineer</h1>
                         <Fade right>
-                        <div className="flex flex-row flex-wrap overflow-y-hidden overflow-x-scroll scrollbar-hide items-center justify-evenly mt-8 md:mt-16 lg:mt-24">
-                            <AboutCard title='Fullstack' subtitle='Discover More' />
+                        <div className="flex flex-row overflow-y-scroll scrollbar-hide items-center justify-evenly mt-8 md:mt-16 lg:mt-24">
+                            <AboutCard title='Fullstack' subtitle='Discover More' className="mx-4" />
                             <AboutCard title='User Experience' subtitle='Discover More'/>
                             <AboutCard title='Software' subtitle='Discover More'/>
                         </div>

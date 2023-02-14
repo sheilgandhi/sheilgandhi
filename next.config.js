@@ -1,9 +1,6 @@
-module.exports = {
-    images: {
-        domains: [
-            "upload.wikimedia.org",
-            "play-lh.googleusercontent.com",
-            "cdn-images-1.medium.com"
-        ],
-    }
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
 }
+
+module.exports = nextConfig

@@ -1,21 +1,3 @@
-/* ./styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer utilities {
-  @variants responsive {
-    /* Chrome, Safari and Opera */
-    .all::-webkit-scrollbar {
-      display: none;
-    }
-
-    .all {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
-    .main {
-      height: calc(100vh - 5rem);
-    }
-  }
-}

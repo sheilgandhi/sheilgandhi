@@ -1,7 +1,11 @@
 import { Avatar, Badge, Button, Text, Tooltip } from "@nextui-org/react";
 import Head from "next/head";
 import React from "react";
-import { SectionProps } from "types/section";
+import Socials from "./Socials";
+
+interface AboutProps {
+  setActiveLink(value: string): void;
+}
 
 const URL =
   "https://miro.medium.com/v2/resize:fit:2400/1*K2oMFnx2zKl-nF5kuiDaIg.jpeg";
@@ -30,39 +34,41 @@ const hobbies = [
   "Travel ✈️",
 ];
 
-const About: React.FC<SectionProps> = () => {
+const About: React.FC<AboutProps> = ({ setActiveLink }) => {
+  const sendEmail = () => {
+    const recipient = "sheilgandhi24@hotmail.com";
+    const subject = "Hello! I saw your Porfolio";
+    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(
+      subject
+    )}`;
+    window.location.href = mailtoUrl;
+  };
+
+  const scroll = () => {
+    setActiveLink("work");
+    const section = document.getElementById("work");
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
-    <div className="flex items-center justify-evenly mx-8 my-4 py-16">
+    <div
+      className="flex items-center justify-evenly mx-8 my-4 py-16"
+      id="about"
+      tabIndex={0}
+      onFocus={() => setActiveLink("about")}
+    >
       <Head>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         />
       </Head>
-      <div className="hidden sm:flex flex-col text-black">
-        <a
-          href="https://www.linkedin.com/in/sheilgandhi"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-linkedin"></i>
-        </a>
-        <a
-          href="https://github.com/sheilgandhi"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-github"></i>
-        </a>
-        <a
-          href="/path/to/your/cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fas fa-file-pdf"></i>
-        </a>
-      </div>
-
+      <Socials flex_direction="col" />
       <div className="flex flex-wrap flex-col items-start max-w-md">
         <Text h1 size={40} weight="bold">
           Hi, I&apos;m Sheil
@@ -92,17 +98,20 @@ const About: React.FC<SectionProps> = () => {
         </div>
         <div className="py-4">
           <Text h2 size={22} weight="bold">
-            📧 Email
+            📧 Email Me
           </Text>
           <Tooltip content="Send Email">
-            <button className="bg-purple-500 p-2 rounded-xl">
-              <Text h2 size={28} weight="bold" color="white">
+            <button
+              className="bg-purple-500 p-2 rounded-xl"
+              onClick={sendEmail}
+            >
+              <Text h2 size={20} weight="bold" color="white">
                 Get in Touch!
               </Text>
             </button>
           </Tooltip>
         </div>
-        <div className="flex items-center pt-8">
+        <button className="flex items-center pt-8" onClick={scroll}>
           <Text h2 size={16}>
             Scroll down
           </Text>
@@ -117,7 +126,7 @@ const About: React.FC<SectionProps> = () => {
           >
             <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
-        </div>
+        </button>
       </div>
       <div className="hidden sm:flex">
         <Avatar src={URL} alt="sheil" size="xl" />

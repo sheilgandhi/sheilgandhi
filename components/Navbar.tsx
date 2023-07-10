@@ -1,11 +1,21 @@
 import React, { useState } from "react";
 import { Navbar, Text } from "@nextui-org/react";
 
-const NavBar = () => {
-  const [activeLink, setActiveLink] = useState("about");
+interface NavBarProps {
+  active_link: string;
+  setActiveLink(value: string): void;
+}
 
+const NavBar: React.FC<NavBarProps> = ({ active_link, setActiveLink }) => {
   const handleLinkClick = (link: string) => {
     setActiveLink(link);
+    const section = document.getElementById(link);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   return (
@@ -20,22 +30,22 @@ const NavBar = () => {
       <div className="flex w-full justify-center sm:w-fit">
         <Navbar.Content>
           <Navbar.Link
-            href="#"
-            isActive={activeLink === "about"}
+            href="#about-section"
+            isActive={active_link === "about"}
             onClick={() => handleLinkClick("about")}
           >
             About Me
           </Navbar.Link>
           <Navbar.Link
-            href="#"
-            isActive={activeLink === "work"}
+            href="#work-section"
+            isActive={active_link === "work"}
             onClick={() => handleLinkClick("work")}
           >
             My Work
           </Navbar.Link>
           <Navbar.Link
-            href="#"
-            isActive={activeLink === "projects"}
+            href="#projects-section"
+            isActive={active_link === "projects"}
             onClick={() => handleLinkClick("projects")}
           >
             My Projects

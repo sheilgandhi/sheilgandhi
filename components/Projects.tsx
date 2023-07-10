@@ -1,7 +1,10 @@
 import React from "react";
 import Card, { CardProps as Experience } from "./Card";
-import { SectionProps } from "types/section";
 import { Text } from "@nextui-org/react";
+
+interface ProjectsProps {
+  setActiveLink(value: string): void;
+}
 
 const projects: Experience[] = [
   {
@@ -47,9 +50,14 @@ const projects: Experience[] = [
   },
 ];
 
-const Projects: React.FC<SectionProps> = () => {
+const Projects: React.FC<ProjectsProps> = ({ setActiveLink }) => {
   return (
-    <div className="mx-8 my-4 py-4">
+    <div
+      className="mx-8 my-4 py-4"
+      id="projects"
+      tabIndex={0}
+      onFocus={() => setActiveLink("projects")}
+    >
       <Text h1 size={40}>
         My Projects
       </Text>

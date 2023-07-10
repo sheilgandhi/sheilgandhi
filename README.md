@@ -1,38 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sheil Gandhi
 
-## Getting Started
+[Email](mailto:sheilgandhi24@hotmail.com) | Wellington, New Zealand
 
-First, run the development server:
+## Education
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Victoria University
+  - BE(Hons) in Software Engineering
+  - First Class Degree
+  - Nov 2022 | Wellington, NZ
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Links
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- [LinkedIn](https://www.linkedin.com/in/sheilgandhi)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Skills
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Programming
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Over 5000 lines: React, React Native, TypeScript, JavaScript, HTML/CSS, git, Jest, Cypress, Next.js, Tailwind CSS
+- Over 1000 lines: Node.js, PHP, MySQL, Twig
+- Familiar: PostgreSQL, Java, Python, Android, Splunk, XCode, Firebase, Linux
 
-## Learn More
+### Soft Skills
 
-To learn more about Next.js, take a look at the following resources:
+- Public Speaking
+- Leadership
+- Communication
+- Problem Solving
+- Work Ethic
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Hobbies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Cricket
+- Football
+- Running
+- Journaling
+- Travel
 
-## Deploy on Vercel
+## Experience
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### MOBI
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Software Engineer
+- Nov 2021 - Current | Wellington, NZ
+
+Enhanced client relationships with Papa John's, Wild Wing, and BurgerFuel by implementing requested features using React, PHP, and MySQL. Implemented Apple & Google Single Sign-On frontend functionality in React Native & React. Streamlined operations by automating QR code generation. Achieved comprehensive customer information updates. Leading innovation on the aggregator product. Built an internal table tennis ranking system.
+
+## Projects
+
+### Decentralised Application For Object Recognition, Storage, and Tracking
+
+- BE(Hons) Project
+- React Native, IPFS, Google ARCore
+- 2022
+
+Aimed to provide communities with data sovereignty over their physical and digital assets through a unique identifier system. Conducted UX designs. Delivered a React Native-Android system. Established a testing pipeline. Evaluated cybersecurity risks.
+

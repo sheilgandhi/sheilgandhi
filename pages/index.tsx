@@ -1,8 +1,8 @@
-import About from "components/About";
-import Footer from "components/Footer";
-import NavBar from "components/Navbar";
-import Projects from "components/Projects";
-import Work from "components/Work";
+import About from "../components/About";
+import Footer from "../components/Footer";
+import NavBar from "../components/Navbar";
+import Projects from "../components/Projects";
+import Work from "../components/Work";
 import Head from "next/head";
 import { useState } from "react";
 

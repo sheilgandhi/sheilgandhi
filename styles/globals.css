@@ -1,21 +1,28 @@
-/* ./styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
-  @variants responsive {
-    /* Chrome, Safari and Opera */
-    .all::-webkit-scrollbar {
-      display: none;
-    }
+  .typing-animation {
+    animation: typing 1s steps(40), blink-caret 0.5s infinite;
+  }
 
-    .all {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
+  @keyframes typing {
+    from {
+      width: 0;
     }
-    .main {
-      height: calc(100vh - 5rem);
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
     }
   }
 }

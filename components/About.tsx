@@ -1,14 +1,12 @@
 import { Avatar, Badge, Button, Text, Tooltip } from "@nextui-org/react";
 import Head from "next/head";
 import React from "react";
-import Socials from "./Socials";
-
 interface AboutProps {
   setActiveLink(value: string): void;
 }
 
 const URL =
-  "https://miro.medium.com/v2/resize:fit:2400/1*K2oMFnx2zKl-nF5kuiDaIg.jpeg";
+  "https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-xJOH-RK4LeysQA_4qQwazPDGr7iAbfzGhHIRckksBkVRhEgVUV0kAXV01k4ayP_4U2pJf9_sBSJ0WUJSZSxkRsvTCb=w3430-h7616";
 
 const skills = [
   "React",
@@ -57,7 +55,7 @@ const About: React.FC<AboutProps> = ({ setActiveLink }) => {
 
   return (
     <div
-      className="flex items-center justify-evenly mx-8 my-4 py-16"
+      className="flex items-center justify-start mx-8 my-4 py-16 max-w-full"
       id="about"
       tabIndex={0}
       onFocus={() => setActiveLink("about")}
@@ -68,11 +66,13 @@ const About: React.FC<AboutProps> = ({ setActiveLink }) => {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         />
       </Head>
-      <Socials flex_direction="col" />
-      <div className="flex flex-wrap flex-col items-start max-w-md">
-        <Text h1 size={40} weight="bold">
-          Hi, I&apos;m Sheil
-        </Text>
+      <div className="flex flex-wrap flex-col items-start max-w-full">
+        <div className="flex">
+          <Avatar src={URL} alt="sheil" size="xl" className="mr-2" />
+          <Text h1 size={40} weight="bold">
+            Hi, I&apos;m Sheil
+          </Text>
+        </div>
         <Text h2 size={18} weight="light">
           I am a Frontend Developer with experience in cyber security.
         </Text>
@@ -98,20 +98,38 @@ const About: React.FC<AboutProps> = ({ setActiveLink }) => {
         </div>
         <div className="py-4">
           <Text h2 size={22} weight="bold">
-            📧 Email Me
+            Get in Touch and Check Out My Links
           </Text>
-          <Tooltip content="Send Email">
-            <button
-              className="bg-purple-500 p-2 rounded-xl"
-              onClick={sendEmail}
-            >
-              <Text h2 size={20} weight="bold" color="white">
-                Get in Touch!
-              </Text>
-            </button>
-          </Tooltip>
+          <Badge color="secondary" onClick={sendEmail}>
+            {" "}
+            📧 Email Me
+          </Badge>
+          <Badge
+            color="primary"
+            onClick={() =>
+              window.open("https://www.linkedin.com/in/sheilgandhi")
+            }
+          >
+            {" "}
+            <i className="fab fa-linkedin" /> LinkedIn
+          </Badge>
+          <Badge
+            onClick={() => window.open("https://www.github.com/sheilgandhi")}
+          >
+            {" "}
+            <i className="fab fa-github" /> GitHub
+          </Badge>
+          <Badge
+            color="error"
+            onClick={() =>
+              window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+            }
+          >
+            {" "}
+            <i className="fas fa-file-pdf" /> Resume
+          </Badge>
         </div>
-        <button className="flex items-center pt-8" onClick={scroll}>
+        <button className="flex items-center pt-4" onClick={scroll}>
           <Text h2 size={16}>
             Scroll down
           </Text>
@@ -127,9 +145,6 @@ const About: React.FC<AboutProps> = ({ setActiveLink }) => {
             <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
         </button>
-      </div>
-      <div className="hidden sm:flex">
-        <Avatar src={URL} alt="sheil" size="xl" />
       </div>
     </div>
   );

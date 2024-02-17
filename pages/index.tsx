@@ -1,25 +1,84 @@
-import About from "../components/About";
-import Footer from "../components/Footer";
-import NavBar from "../components/Navbar";
-import Projects from "../components/Projects";
-import Work from "../components/Work";
-import Head from "next/head";
-import { useState } from "react";
+import Marquee from "@/components/Marquee";
+import { AnimatePresence, motion } from "framer-motion";
+import HomeScreenBox from "@/components/HomeScreenBox";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch, faTimes } from "@fortawesome/free-solid-svg-icons";
+
+const MARQUEE_TOP = [
+  "SHEIL GANDHI",
+  "WEBSITE DEVELOPER",
+  "APP DEVELOPER",
+  "DESIGNER",
+  "LEADER",
+];
+const MARQUEE_BOTTOM = [
+  "WEB DESIGN",
+  "APP DEVELOPMENT",
+  "GRAPHIC DESIGN",
+  "WEB DEVELOPMENT",
+  "STRATEGY",
+];
 
 const Home: React.FC = () => {
-  const [active_link, setActiveLink] = useState("about");
+  const pageTransition = {
+    in: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+    out: {
+      opacity: 0,
+      y: "-100vh",
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  };
 
   return (
-    <div className="flex flex-col">
-      <Head>
-        <title>Sheil Gandhi</title>
-      </Head>
-      <NavBar active_link={active_link} setActiveLink={setActiveLink} />
-      <About setActiveLink={setActiveLink} />
-      <Work setActiveLink={setActiveLink} />
-      <Projects setActiveLink={setActiveLink} />
-      <Footer setActiveLink={setActiveLink} />
-    </div>
+    <AnimatePresence mode="popLayout">
+      <div className="flex flex-col bg-black text-white">
+        <Marquee speed="Slow">
+          {MARQUEE_TOP.map((text, index) => (
+            <div key={text} className="center gap-4">
+              <span className="text-xl">{text}</span>
+              {MARQUEE_TOP.length - 1 !== index && (
+                <FontAwesomeIcon icon={faTimes} />
+              )}
+            </div>
+          ))}
+        </Marquee>
+
+        <motion.div
+          key="home"
+          initial="out"
+          animate="in"
+          exit="out"
+          variants={pageTransition}
+          className="flex flex-wrap w-full h-[calc(100vh-4rem)] border"
+        >
+          <HomeScreenBox name="about" isRectangle />
+          <HomeScreenBox name="connect" isRectangle={false} />
+          <HomeScreenBox name="work" isRectangle={false} />
+          <HomeScreenBox name="projects" isRectangle />
+        </motion.div>
+
+        <Marquee speed="Fast">
+          {MARQUEE_BOTTOM.map((text, index) => (
+            <div key={text} className="center gap-4">
+              <span className="text-xl">{text}</span>
+              {MARQUEE_BOTTOM.length - 1 !== index && (
+                <FontAwesomeIcon icon={faCircleNotch} />
+              )}
+            </div>
+          ))}
+        </Marquee>
+      </div>
+    </AnimatePresence>
   );
 };
 

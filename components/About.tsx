@@ -76,7 +76,7 @@ const About: React.FC<AboutProps> = ({ setActiveLink }) => {
         <Text h2 size={18} weight="light">
           I am a Frontend Developer with experience in cyber security.
         </Text>
-        <div className="flex flex-col pt-4">
+        <div className="col pt-4">
           <Text>Skills:</Text>
           <div className="flex-wrap">
             {skills.map((skill: string) => (
@@ -86,7 +86,7 @@ const About: React.FC<AboutProps> = ({ setActiveLink }) => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col pt-4">
+        <div className="col pt-4">
           <Text>Interests:</Text>
           <div className="flex-wrap">
             {hobbies.map((hobby: string) => (

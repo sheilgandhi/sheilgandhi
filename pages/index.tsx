@@ -41,7 +41,7 @@ const Home: React.FC = () => {
 
   return (
     <AnimatePresence mode="popLayout">
-      <div className="flex flex-col bg-black text-white">
+      <div className="col bg-black text-white">
         <Marquee speed="Slow">
           {MARQUEE_TOP.map((text, index) => (
             <div key={text} className="center gap-4">

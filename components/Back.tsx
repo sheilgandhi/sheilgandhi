@@ -12,7 +12,7 @@ const Back = () => {
       onClick={() => router.push("/")}
     >
       <FontAwesomeIcon icon={faArrowLeft} />
-      <p>BACK</p>
+      <p>HOME</p>
     </div>
   );
 };

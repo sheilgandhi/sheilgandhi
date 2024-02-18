@@ -1,12 +1,7 @@
+import Image from "next/image";
 import React from "react";
-import Card, { CardProps as Experience } from "./Card";
-import { Text } from "@nextui-org/react";
 
-interface ProjectsProps {
-  setActiveLink(value: string): void;
-}
-
-const projects: Experience[] = [
+const projects = [
   {
     title: "mobi2pong",
     image_url:
@@ -50,18 +45,18 @@ const projects: Experience[] = [
   },
 ];
 
-const Projects: React.FC<ProjectsProps> = ({ setActiveLink }) => {
+const Projects: React.FC = () => {
   return (
-    <div
-      className="mx-8 my-4 py-4"
-      id="projects"
-      tabIndex={0}
-      onFocus={() => setActiveLink("projects")}
-    >
-      <Text h1 size={40}>
-        My Projects
-      </Text>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <div className="">
+      <div className="flex gap-8 snap-mandatory snap-x overflow-x-auto">
+        <div
+          className="hidden md:inline-block col snap-center "
+          style={{ minWidth: "600px" }}
+        >
+          <h2 className="text-6xl">Scholar of Software.</h2>
+          <h2 className="text-6xl">Habitual of Heurisitics.</h2>
+          <h2 className="text-6xl">Digital Leader.</h2>
+        </div>
         {projects.map(
           ({
             title,
@@ -71,17 +66,25 @@ const Projects: React.FC<ProjectsProps> = ({ setActiveLink }) => {
             description,
             link,
             link_description,
-          }: Experience) => (
-            <Card
+          }) => (
+            <div
               key={title}
-              title={title}
-              image_url={image_url}
-              job={job}
-              dates={dates}
-              description={description}
-              link={link}
-              link_description={link_description}
-            />
+              className="border-b-4 border-black bg-yellow-300 text-black p-4 col justify-between snap-center"
+              style={{ minWidth: "900px", minHeight: "400px" }}
+            >
+              <div className="between">
+                <div className="col">
+                  <span className="text-4xl">{title}</span>
+                  <span className="text-xl">{job}</span>
+                  <span>{dates}</span>
+                </div>
+                <Image src={image_url} alt={title} width={100} height={100} />
+              </div>
+              <span>{description}</span>
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                {link_description}
+              </a>
+            </div>
           )
         )}
       </div>

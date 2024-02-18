@@ -38,10 +38,10 @@ const about = [
 const AboutScreen = () => {
   return (
     <ScreenPage>
-      <div className="flex flex-col gap-16 p-16">
+      <div className="col gap-16 p-4 md:p-16">
         <Back />
         <h1 className="text-4xl">A B O U T</h1>
-        <div className="flex flex-col gap-4 items-start md:justify-between md:flex-row">
+        <div className="col gap-4 items-start md:justify-between md:flex-row">
           <Image
             src="/images/Sheil.jpg"
             alt="Image of Sheil Gandhi"
@@ -49,7 +49,7 @@ const AboutScreen = () => {
             height={500}
             className="drop-shadow-white cursor-crosshair"
           />
-          <div className="flex flex-col gap-4">
+          <div className="col gap-4">
             {about.map(({ title, paragraph }) => (
               <div key={title} className="text-left md:text-right">
                 <h2 className="font-black text-2xl">{title}</h2>

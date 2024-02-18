@@ -12,7 +12,7 @@ const Connect: React.FC = () => {
 
   return (
     <ScreenPage>
-      <div className="flex flex-col gap-8 p-4 md:p-16">
+      <div className="col gap-8 p-4 md:p-16">
         <Back />
         <h1 className="text-3xl">C O N N E C T</h1>
         <p>
@@ -24,50 +24,58 @@ const Connect: React.FC = () => {
           </a>
           . I look forward to hearing from you.
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 border-white border-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 border-black border-2">
           <div
             style={{ backgroundColor: "#f9ef2a" }}
             className="text-black border-black border-b-2 md:border-r-2 md:border-b-0"
           >
-            <form action="" className="flex flex-col gap-4 p-4">
-              <div className="flex flex-col gap-2">
+            <form
+              action="https://formsubmit.co/sheilgandhi24@hotmail.com"
+              method="POST"
+              className="col gap-4 p-4"
+            >
+              <div className="col gap-2">
                 <label className="font-bold" htmlFor="name">
                   N A M E
                 </label>
                 <input
                   type="text"
+                  name="name"
                   value={name}
                   onChange={(event) => setName(event.target.value)}
                   className="border-black border-4"
                 />
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="col gap-2">
                 <label className="font-bold" htmlFor="name">
                   B U D G E T
                 </label>
                 <input
                   type="text"
+                  name="budget"
                   value={budget}
                   onChange={(event) => setBudget(event.target.value)}
                   className="border-black border-4"
                 />
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="col gap-2">
                 <label className="font-bold" htmlFor="name">
                   E M A I L
                 </label>
                 <input
                   type="email"
+                  name="email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   className="border-black border-4"
                 />
               </div>
-              <div className="flex flex-col gap-2">
+              <div className="col gap-2">
                 <label className="font-bold" htmlFor="name">
                   M E S S A G E
                 </label>
                 <textarea
+                  name="message"
                   value={message}
                   onChange={(event) => setMessage(event.target.value)}
                   className="h-56 border-black border-4"
@@ -91,25 +99,25 @@ const Connect: React.FC = () => {
               href="https://www.instragram.com/sheilgandhi"
               target="_blank"
               referrerPolicy="no-referrer"
-              className="fa fa-instagram bg-black p-8 rounded-3xl text-7xl"
+              className="fa fa-instagram bg-black text-white p-8 rounded-3xl text-7xl"
             />
             <a
               href="https://www.linkedin.com/me/sheilgandhi"
               target="_blank"
               referrerPolicy="no-referrer"
-              className="fa fa-linkedin bg-black p-8 rounded-3xl text-7xl"
+              className="fa fa-linkedin bg-black text-white p-8 rounded-3xl text-7xl"
             />
             <a
               href="https://www.github.com/sheilgandhi"
               target="_blank"
               referrerPolicy="no-referrer"
-              className="fa fa-github bg-black p-8 rounded-3xl text-7xl"
+              className="fa fa-github bg-black text-white p-8 rounded-3xl text-7xl"
             />
             <a
               href="https://www.instragram.com/sheilgandhi"
               target="_blank"
               referrerPolicy="no-referrer"
-              className="fa fa-coffee bg-black p-8 rounded-3xl text-7xl"
+              className="fa fa-coffee bg-black text-white p-8 rounded-3xl text-7xl"
             />
           </div>
         </div>

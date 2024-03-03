@@ -12,38 +12,38 @@ const Footer: React.FC = () => {
 
   return (
     <div className="sticky bottom-0 bg-white border-2 border-black grid grid-cols-4">
-      <span
+      <button
         onClick={() => handleClick("about")}
         className={`footer-button ${
-          router.pathname === "/about" ? "bg-yellow-400 text-black" : ""
+          router.pathname === "/about" ? "footer-button-active" : ""
         }`}
       >
         ABOUT
-      </span>
-      <span
+      </button>
+      <button
         onClick={() => handleClick("projects")}
         className={`footer-button ${
-          router.pathname === "/projects" ? "bg-yellow-400 text-black" : ""
+          router.pathname === "/projects" ? "footer-button-active" : ""
         }`}
       >
         PROJECTS
-      </span>
-      <span
+      </button>
+      <button
         onClick={() => handleClick("work")}
         className={`footer-button ${
-          router.pathname === "/work" ? "bg-yellow-400 text-black" : ""
+          router.pathname === "/work" ? "footer-button-active" : ""
         }`}
       >
         WORK
-      </span>
-      <span
+      </button>
+      <button
         onClick={() => handleClick("connect")}
         className={`footer-button ${
-          router.pathname === "/connect" ? "bg-yellow-400 text-black" : ""
+          router.pathname === "/connect" ? "footer-button-active" : ""
         }`}
       >
         CONNECT
-      </span>
+      </button>
     </div>
   );
 };

@@ -48,14 +48,14 @@ const projects = [
 const Projects: React.FC = () => {
   return (
     <div className="">
-      <div className="flex gap-8 snap-mandatory snap-x overflow-x-auto">
+      <div className="flex col md:row gap-8 snap-mandatory snap-x overflow-x-auto">
         <div
           className="hidden md:inline-block col snap-center "
           style={{ minWidth: "600px" }}
         >
-          <h2 className="text-6xl">Scholar of Software.</h2>
-          <h2 className="text-6xl">Habitual of Heurisitics.</h2>
-          <h2 className="text-6xl">Digital Leader.</h2>
+          <h2 className="text-3xl md:text-6xl">Scholar of Software.</h2>
+          <h2 className="text-3xl md:text-6xl">Habitual of Heurisitics.</h2>
+          <h2 className="text-3xl md:text-6xl">Digital Leader.</h2>
         </div>
         {projects.map(
           ({
@@ -69,8 +69,7 @@ const Projects: React.FC = () => {
           }) => (
             <div
               key={title}
-              className="border-b-4 border-black bg-yellow-300 text-black p-4 col justify-between snap-center"
-              style={{ minWidth: "900px", minHeight: "400px" }}
+              className="border-b-4 border-black bg-yellow-300 text-black p-4 col justify-between snap-center w-full min-w-full h-full min-h-full md:w-[800px] md:min-w-[800px] md:h-[400px] md:min-h-[400px]"
             >
               <div className="between">
                 <div className="col">
@@ -87,6 +86,7 @@ const Projects: React.FC = () => {
             </div>
           )
         )}
+        {/* Buttons */}
       </div>
     </div>
   );

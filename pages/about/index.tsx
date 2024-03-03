@@ -1,4 +1,5 @@
 import Back from "@/components/Back";
+import Footer from "@/components/Footer";
 import ScreenPage from "@/components/ScreenPage";
 import Image from "next/image";
 
@@ -37,29 +38,32 @@ const about = [
 
 const AboutScreen = () => {
   return (
-    <ScreenPage>
-      <div className="col gap-16 p-4 md:p-16">
-        <Back />
-        <h1 className="text-4xl">A B O U T</h1>
-        <div className="col gap-4 items-start md:justify-between md:flex-row">
-          <Image
-            src="/images/Sheil.jpg"
-            alt="Image of Sheil Gandhi"
-            width={500}
-            height={500}
-            className="drop-shadow-white cursor-crosshair"
-          />
-          <div className="col gap-4">
-            {about.map(({ title, paragraph }) => (
-              <div key={title} className="text-left md:text-right">
-                <h2 className="font-black text-2xl">{title}</h2>
-                <p>{paragraph}</p>
-              </div>
-            ))}
+    <div className=" h-[calc(100vh-50px)]">
+      <ScreenPage>
+        <div className="col gap-16 p-4 md:p-16">
+          <Back />
+          <h1 className="text-4xl">A B O U T</h1>
+          <div className="col gap-4 items-start md:justify-between md:flex-row">
+            <Image
+              src="/images/Sheil.jpg"
+              alt="Image of Sheil Gandhi"
+              width={500}
+              height={500}
+              className="drop-shadow-white cursor-crosshair"
+            />
+            <div className="col gap-4">
+              {about.map(({ title, paragraph }) => (
+                <div key={title} className="text-left">
+                  <h2 className="font-black text-2xl">{title}</h2>
+                  <p className="max-w-[74ch]">{paragraph}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </ScreenPage>
+      </ScreenPage>
+      <Footer />
+    </div>
   );
 };
 

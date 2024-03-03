@@ -21,11 +21,16 @@ module.exports = {
         marqueeSlow: "marquee 20s linear infinite",
         marqueeMedium: "marquee 15s linear infinite",
         marqueeFast: "marquee 10s linear infinite",
+        "slide-in-left": "slide-in-left 0.5s ease-out forwards",
       },
       keyframes: {
         marquee: {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0%)" },
+        },
+        "slide-in-left": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
         },
       },
     },

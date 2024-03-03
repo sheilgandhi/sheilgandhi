@@ -1,5 +1,4 @@
 import { AnimatePresence, motion } from "framer-motion";
-import Footer from "./Footer";
 
 interface ScreenPageProps {
   children: React.ReactNode;
@@ -34,10 +33,9 @@ const ScreenPage: React.FC<ScreenPageProps> = ({ children }) => {
         animate="in"
         exit="out"
         variants={pageTransition}
-        className="col bg-white text-black h-screen"
+        className="col bg-white text-black"
       >
         {children}
-        <Footer />
       </motion.div>
     </AnimatePresence>
   );

@@ -1,8 +1,6 @@
 import Back from "@/components/Back";
 import Footer from "@/components/Footer";
 import ScreenPage from "@/components/ScreenPage";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
 const Connect: React.FC = () => {

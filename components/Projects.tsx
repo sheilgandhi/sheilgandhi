@@ -1,5 +1,9 @@
 import Image from "next/image";
-import React from "react";
+import {
+  faAngleDoubleLeft,
+  faAngleDoubleRight,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const projects = [
   {
@@ -46,9 +50,32 @@ const projects = [
 ];
 
 const Projects: React.FC = () => {
+  const scrollToLeft = () => {
+    const scrollContainer = document.getElementById("scroll-container");
+    if (scrollContainer) {
+      scrollContainer.scrollTo({
+        left: scrollContainer.scrollLeft - 600,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollToRight = () => {
+    const scrollContainer = document.getElementById("scroll-container");
+    if (scrollContainer) {
+      scrollContainer.scrollTo({
+        left: scrollContainer.scrollLeft + 600,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <div className="">
-      <div className="flex col md:row gap-8 snap-mandatory snap-x overflow-x-auto">
+      <div
+        id="scroll-container"
+        className="flex col md:row gap-8 snap-mandatory snap-x overflow-x-auto"
+      >
         <div
           className="hidden md:inline-block col snap-center "
           style={{ minWidth: "600px" }}
@@ -86,7 +113,14 @@ const Projects: React.FC = () => {
             </div>
           )
         )}
-        {/* Buttons */}
+        <div className="hidden md:inline-block absolute bottom-8 right-8">
+          <button onClick={scrollToLeft}>
+            <FontAwesomeIcon icon={faAngleDoubleLeft} size="8x" />
+          </button>
+          <button onClick={scrollToRight}>
+            <FontAwesomeIcon icon={faAngleDoubleRight} size="8x" />
+          </button>
+        </div>
       </div>
     </div>
   );

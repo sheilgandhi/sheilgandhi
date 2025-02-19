@@ -1,58 +1,18 @@
-# Sheil Gandhi
+<div style="display: flex; flex-direction: column; justify-content: center; width: 100%; text-align: center">
+<h1 >Hi 👋, I'm Sheil Gandhi</h1>
+<h3 >Software Engineer, pursuing Indie Hacking</h3>
 
-[Email](mailto:sheilgandhi24@hotmail.com) | Wellington, New Zealand
+🔭 I’m currently working on [Detour](link to come)
 
-## Education
+💬 Ask me about **React/React Native**
 
-- Victoria University
-  - BE(Hons) in Software Engineering
-  - First Class Degree
-  - Nov 2022 | Wellington, NZ
+📫 How to reach me **sheilgandhi24@hotmail.com**
 
-## Links
+<h3>Connect with me:</h3>
+<p>
+<a href="https://linkedin.com/in/sheilgandhi" target="blank"><img  src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="sheilgandhi" height="30" width="40" /></a>
+</p>
 
-- [LinkedIn](https://www.linkedin.com/in/sheilgandhi)
-
-## Skills
-
-### Programming
-
-- Over 5000 lines: React, React Native, TypeScript, JavaScript, HTML/CSS, git, Jest, Cypress, Next.js, Tailwind CSS
-- Over 1000 lines: Node.js, PHP, MySQL, Twig
-- Familiar: PostgreSQL, Java, Python, Android, Splunk, XCode, Firebase, Linux
-
-### Soft Skills
-
-- Public Speaking
-- Leadership
-- Communication
-- Problem Solving
-- Work Ethic
-
-## Hobbies
-
-- Cricket
-- Football
-- Running
-- Journaling
-- Travel
-
-## Experience
-
-### MOBI
-
-- Software Engineer
-- Nov 2021 - Current | Wellington, NZ
-
-Enhanced client relationships with Papa John's, Wild Wing, and BurgerFuel by implementing requested features using React, PHP, and MySQL. Implemented Apple & Google Single Sign-On frontend functionality in React Native & React. Streamlined operations by automating QR code generation. Achieved comprehensive customer information updates. Leading innovation on the aggregator product. Built an internal table tennis ranking system.
-
-## Projects
-
-### Decentralised Application For Object Recognition, Storage, and Tracking
-
-- BE(Hons) Project
-- React Native, IPFS, Google ARCore
-- 2022
-
-Aimed to provide communities with data sovereignty over their physical and digital assets through a unique identifier system. Conducted UX designs. Delivered a React Native-Android system. Established a testing pipeline. Evaluated cybersecurity risks.
-
+<h3>Languages and Tools:</h3>
+<p> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://jestjs.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="40" height="40"/> </a> <a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="40" height="40"/> </a> <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
+</div>

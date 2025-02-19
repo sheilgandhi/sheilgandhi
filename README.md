@@ -2,7 +2,7 @@
 <h1 >Hi 👋, I'm Sheil Gandhi</h1>
 <h3 >Software Engineer, pursuing Indie Hacking</h3>
 
-🔭 I’m currently working on [Detour](link to come)
+🔭 I’m currently working on Detour
 
 💬 Ask me about **React/React Native**
 

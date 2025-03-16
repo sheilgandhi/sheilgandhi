@@ -1,15 +1,41 @@
-import { PortableText, type SanityDocument } from 'next-sanity';
+import {
+    PortableText,
+    type PortableTextReactComponents,
+    type SanityDocument,
+} from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 import Link from 'next/link';
 import { Image } from 'next-sanity/image';
 import Navbar from '@/components/navbar';
 import { urlFor } from '@/sanity/lib/image';
+import { Badge } from '@/components/ui/badge';
+import { ReactNode } from 'react';
+
+const styles: Partial<PortableTextReactComponents> = {
+    types: {},
+    marks: {},
+    block: {
+        h1: ({ children }: { children?: ReactNode }) => (
+            <h1 className="text-4xl font-bold">{children}</h1>
+        ),
+        h2: ({ children }: { children?: ReactNode }) => (
+            <h2 className="text-3xl font-semibold">{children}</h2>
+        ),
+        h3: ({ children }: { children?: ReactNode }) => (
+            <h3 className="text-2xl font-medium">{children}</h3>
+        ),
+        normal: ({ children }: { children?: ReactNode }) => (
+            <p className="text-base">{children}</p>
+        ),
+    },
+};
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
     title,
     body,
     publishedAt,
     mainImage,
+    categories,
     "author": author->{
       _id,
       name,
@@ -60,7 +86,15 @@ export default async function PostPage({
                 />
             )}
             <h1 className="text-4xl font-bold">{post.title}</h1>
-            <div className="flex items-center gap-4">
+            <div className="flex gap-4">
+                {post.categories &&
+                    post.categories.map((tag: string) => (
+                        <Badge key={tag} variant={'outline'}>
+                            {tag}
+                        </Badge>
+                    ))}
+            </div>
+            <div className="flex flex-wrap items-center gap-4">
                 {authorImageUrl && (
                     <Image
                         src={authorImageUrl}
@@ -71,10 +105,12 @@ export default async function PostPage({
                     />
                 )}
                 <p>{post.author.name}</p>
-                <p>|</p>
+                <p className="hidden lg:inline-flex">|</p>
                 <p>Published: {formatDate(post.publishedAt)}</p>
             </div>
-            {Array.isArray(post.body) && <PortableText value={post.body} />}
+            {Array.isArray(post.body) && (
+                <PortableText value={post.body} components={styles} />
+            )}
         </div>
     );
 }

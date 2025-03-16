@@ -47,7 +47,7 @@ const Socials = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="border-2 rounded-xl p-2"
+                        className="border-2 rounded-xl p-2 hover:animate-pulse"
                     >
                         {link.icon}
                     </Link>

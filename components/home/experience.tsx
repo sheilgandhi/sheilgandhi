@@ -53,14 +53,27 @@ const Experience = () => {
             </TabsContent>
             <TabsContent value="education">
                 <Card>
-                    <CardHeader>
-                        <CardDescription>Feb 2019 - Nov 2022</CardDescription>
-                        <CardTitle>Victoria University of Wellington</CardTitle>
-                        <CardDescription>
-                            First Class Bachelor of Engineering with Honours in
-                            Software Engineering
-                        </CardDescription>
-                    </CardHeader>
+                    <div className="flex pl-4">
+                        <Image
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGciZFzdotbEDm6fTilIEwousjNp13KC9P8A&s"
+                            alt="MOBI HQ"
+                            width={65}
+                            height={65}
+                            className="rounded-full "
+                        />
+                        <CardHeader className="w-full">
+                            <CardDescription>
+                                Feb 2019 - Nov 2022
+                            </CardDescription>
+                            <CardTitle>
+                                Victoria University of Wellington
+                            </CardTitle>
+                            <CardDescription>
+                                First Class Bachelor of Engineering with Honours
+                                in Software Engineering
+                            </CardDescription>
+                        </CardHeader>
+                    </div>
                 </Card>
             </TabsContent>
         </Tabs>

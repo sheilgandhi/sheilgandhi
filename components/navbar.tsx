@@ -15,7 +15,9 @@ const Navbar = () => {
             <div className="flex gap-4 md:gap-8">
                 {routes.map((route) => (
                     <Link key={route.name} href={route.href}>
-                        <span className="hover:scale-125">{route.name}</span>
+                        <span className="hover:animate-pulse">
+                            {route.name}
+                        </span>
                     </Link>
                 ))}
             </div>

@@ -9,7 +9,12 @@ const ThemeToggle = () => {
 
     if (resolvedTheme === 'dark') {
         return (
-            <Button onClick={() => setTheme('light')} variant="outline">
+            <Button
+                onClick={() => {
+                    setTheme('light');
+                }}
+                variant="outline"
+            >
                 <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
             </Button>
         );
@@ -23,7 +28,7 @@ const ThemeToggle = () => {
         );
     }
 
-    return null;
+    return <div />;
 };
 
 export default ThemeToggle;

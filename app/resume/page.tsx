@@ -1,13 +1,13 @@
 import Navbar from '@/components/navbar';
 import React from 'react';
 
-const Contact = () => {
+const Resume = () => {
     return (
         <div className="page">
             <Navbar />
-            Contact coming soon...
+            <iframe src="/Sheil_Resume.pdf" className="h-screen" />
         </div>
     );
 };
 
-export default Contact;
+export default Resume;

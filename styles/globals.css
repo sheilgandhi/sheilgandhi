@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .col {
+        @apply flex flex-col;
+    }
+
+    .row {
+        @apply flex flex-row;
+    }
+
+    .center {
+        @apply flex items-center justify-center;
+    }
+
+    .between {
+        @apply flex items-center justify-between;
+    }
+
+    .evenly {
+        @apply flex items-center justify-evenly;
+    }
+
+    .footer-button {
+        @apply md:text-2xl p-2 border-r-2 border-black w-full center cursor-pointer;
+    }
+
+    .footer-button-active {
+        @apply animate-slide-in-left bg-yellow-400 text-black;
+    }
+
+    @keyframes slide-down {
+        0% {
+            transform: translateY(0%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(100%);
+            opacity: 1;
+        }
+    }
+
+    .animate-slide-up {
+        animation: slide-down 0.3s ease-in-out forwards;
+    }
+}

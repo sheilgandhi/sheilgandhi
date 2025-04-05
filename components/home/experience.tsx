@@ -69,8 +69,7 @@ const Experience = () => {
                                 Victoria University of Wellington
                             </CardTitle>
                             <CardDescription>
-                                First Class Bachelor of Engineering with Honours
-                                in Software Engineering
+                                First Class BE(Hons) in Software Engineering
                             </CardDescription>
                         </CardHeader>
                     </div>

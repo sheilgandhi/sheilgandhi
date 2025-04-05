@@ -9,7 +9,7 @@ import { urlFor } from '@/sanity/lib/image';
 const POSTS_QUERY = `*[
   _type == "post"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, mainImage}`;
+]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, mainImage, previewText}`;
 
 const options = { next: { revalidate: 30 } };
 
@@ -39,7 +39,7 @@ export default async function Blog() {
                                     height={100}
                                     className="border-2 rounded-xl"
                                 />
-                                <div className="flex flex-col gap-4 w-full">
+                                <div className="flex flex-col w-full">
                                     <CardHeader className="text-xl font-semibold">
                                         {post.title}
                                     </CardHeader>
@@ -47,6 +47,11 @@ export default async function Blog() {
                                         {new Date(
                                             post.publishedAt
                                         ).toLocaleDateString()}
+                                    </CardDescription>
+                                    <CardDescription className="pl-6 py-2">
+                                        {post.previewText
+                                            ? post.previewText
+                                            : 'No preview text available'}
                                     </CardDescription>
                                 </div>
                             </div>

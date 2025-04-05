@@ -30,8 +30,6 @@ const ThemeToggle = () => {
             )}
         </Button>
     );
-
-    return <div />;
 };
 
 export default ThemeToggle;

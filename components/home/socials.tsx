@@ -12,12 +12,12 @@ const links = [
     {
         name: 'github',
         icon: <GithubIcon fontSize={28} />,
-        href: 'github.com/sheilgandhi',
+        href: 'https://www.github.com/sheilgandhi',
     },
     {
         name: 'linkedin',
         icon: <LinkedinIcon fontSize={28} />,
-        href: 'linkedin.com/in/sheilgandhi',
+        href: 'https://www.linkedin.com/in/sheilgandhi',
     },
     {
         name: 'email',
@@ -37,10 +37,13 @@ const Socials = () => {
             </p>
 
             <div className="flex gap-4 md:gap-8">
-                <div className="flex items-center gap-4 border-2 rounded-xl p-2">
+                <Link
+                    href="/resume"
+                    className="flex items-center gap-4 border-2 rounded-xl p-2 cursor-pointer"
+                >
                     Resume
                     <DocumentPdfIcon fontSize={28} />
-                </div>
+                </Link>
                 {links.map((link) => (
                     <Link
                         key={link.name}

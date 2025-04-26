@@ -5,11 +5,12 @@ import Navbar from '@/components/navbar';
 import { Card, CardDescription, CardHeader } from '@/components/ui/card';
 import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/image';
+import { Badge } from '@/components/ui/badge';
 
 const POSTS_QUERY = `*[
   _type == "post"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, mainImage, previewText}`;
+]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, mainImage, previewText, categories}`;
 
 const options = { next: { revalidate: 30 } };
 
@@ -23,7 +24,8 @@ export default async function Blog() {
     return (
         <div className="page">
             <Navbar />
-            <h1 className="text-4xl font-bold gap-8">Recent Posts</h1>
+            <h1 className="text-4xl font-bold">Recent Posts</h1>
+            <p>i write about ideas i have</p>
             {posts.map((post) => {
                 const postImageUrl = post.mainImage
                     ? urlFor(post.mainImage)?.width(200).height(200).url()
@@ -39,16 +41,24 @@ export default async function Blog() {
                                     height={100}
                                     className="border-2 rounded-xl"
                                 />
-                                <div className="flex flex-col w-full">
-                                    <CardHeader className="text-xl font-semibold">
+                                <div className="flex flex-col w-full pl-6 gap-2">
+                                    <CardHeader className="text-xl font-semibold text-left px-0">
                                         {post.title}
                                     </CardHeader>
-                                    <CardDescription className="pl-6">
-                                        {new Date(
-                                            post.publishedAt
-                                        ).toLocaleDateString()}
+                                    <CardDescription className="flex gap-4">
+                                        {post.categories &&
+                                            post.categories.map(
+                                                (tag: string) => (
+                                                    <Badge
+                                                        key={tag}
+                                                        variant={'outline'}
+                                                    >
+                                                        {tag}
+                                                    </Badge>
+                                                )
+                                            )}
                                     </CardDescription>
-                                    <CardDescription className="pl-6 py-2">
+                                    <CardDescription>
                                         {post.previewText
                                             ? post.previewText
                                             : 'No preview text available'}

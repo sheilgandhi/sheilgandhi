@@ -1,3 +1,4 @@
+import { Edge } from '@xyflow/react';
 import {
     Marriage,
     Person,
@@ -16,8 +17,7 @@ export function buildReactFlowGraph(
         position: { x: Math.random() * 400, y: Math.random() * 400 },
     }));
 
-    // Make edges
-    const edges: unknown[] = [];
+    const edges: Edge[] = [];
 
     relationships.forEach((rel) => {
         edges.push({

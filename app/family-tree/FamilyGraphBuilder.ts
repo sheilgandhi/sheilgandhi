@@ -1,4 +1,4 @@
-import { Edge } from '@xyflow/react';
+import { Edge, Node } from '@xyflow/react';
 import {
     Marriage,
     Person,
@@ -10,8 +10,7 @@ export function buildReactFlowGraph(
     relationships: Relationship[],
     marriages: Marriage[]
 ) {
-    // Make nodes
-    const nodes = persons.map((p) => ({
+    const nodes: Node[] = persons.map((p) => ({
         id: p.id,
         data: { label: `${p.first_name} ${p.last_name ?? ''}` },
         position: { x: Math.random() * 400, y: Math.random() * 400 },

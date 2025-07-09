@@ -17,7 +17,7 @@ export function buildReactFlowGraph(
     }));
 
     // Make edges
-    const edges: any[] = [];
+    const edges: unknown[] = [];
 
     relationships.forEach((rel) => {
         edges.push({

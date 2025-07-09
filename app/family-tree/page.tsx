@@ -1,6 +1,6 @@
 'use server';
 import React from 'react';
-import { Background, Controls, MiniMap, ReactFlow } from '@xyflow/react';
+import { Background, ReactFlow } from '@xyflow/react';
 import Navbar from '@/components/navbar';
 import { getFamilyTree } from '@/api/FamilyTree/FamilyTree';
 import { buildReactFlowGraph } from './FamilyGraphBuilder';

@@ -9,7 +9,7 @@ const Hero = () => {
                     Hey, I&apos;m Sheil{' '}
                     <p className="hover:animate-wiggle">👋🏽</p>
                 </h1>
-                <p className="text-lg">🏢 Frontend Engineer</p>
+                <p className="text-lg">🏢 Mobile App & Fullstack Engineer</p>
                 <p className="text-md">🌏 New Zealand</p>
                 <p className="text-md">
                     👨🏽‍💻 I like to develop projects, run, workout, read, and delve

@@ -1,8 +1,8 @@
 <div style="display: flex; flex-direction: column; justify-content: center; width: 100%; text-align: center">
 <h1 >Hi 👋, I'm Sheil Gandhi</h1>
-<h3 >Software Engineer, pursuing Indie Hacking</h3>
+<h3 >Software Engineer</h3>
 
-🔭 I’m currently working on Detour
+🔭 I’m currently working at MOBI
 
 💬 Ask me about **React/React Native**
 

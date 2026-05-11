@@ -72,8 +72,10 @@ const sections = [
 export default function SitemapPage() {
     return (
         <>
-            <div className="bg-background py-8 px-12 md:px-48 lg:px-84">
-                <Navbar />
+            <div className="bg-background py-8">
+                <div className="mx-auto max-w-7xl px-8 lg:px-16">
+                    <Navbar />
+                </div>
             </div>
             <main className="relative min-h-screen bg-background text-foreground">
                 <div className="mx-auto max-w-7xl px-8 py-12 lg:px-16 lg:py-16">

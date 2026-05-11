@@ -10,46 +10,72 @@ import ProfilePhoto from '@/components/home/profile-photo';
 import SkillsList from '@/components/home/skills-list';
 import Navbar from '@/components/navbar';
 
+const glassyBox =
+    'bg-muted/40 backdrop-blur-sm rounded-2xl border border-border p-6';
+
+const skillsFallback = (
+    <div className="text-left xl:text-right text-muted-foreground text-sm">
+        Loading skills…
+    </div>
+);
+
+const appsFallback = (
+    <div className={glassyBox}>
+        <p className="text-muted-foreground text-sm">Loading apps…</p>
+    </div>
+);
+
 export default function Home() {
     return (
         <>
-            <div className="bg-background py-8 px-12 md:px-48 lg:px-84">
-                <Navbar />
+            <div className="bg-background py-8">
+                <div className="mx-auto max-w-7xl px-8 lg:px-16">
+                    <Navbar />
+                </div>
             </div>
             <main className="relative min-h-screen overflow-hidden bg-background text-foreground">
                 <div className="mx-auto max-w-7xl px-8 py-12 lg:px-16 lg:py-16">
                     <section className="relative grid grid-cols-1 xl:grid-cols-12 gap-8 mb-12">
                         <NameBlock />
-                        <Education />
+                        <div className="hidden xl:block xl:col-span-4 xl:pt-12 z-10">
+                            <Education />
+                        </div>
                     </section>
 
-                    <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-8 items-start">
-                        <div className="md:col-span-1 xl:col-span-4 space-y-8">
+                    {/* Mobile / Tablet: vertical flow with all cards glassy */}
+                    <section className="xl:hidden space-y-8">
+                        <Drive />
+                        <Journey />
+                        <div className={glassyBox}>
+                            <Suspense fallback={skillsFallback}>
+                                <SkillsList />
+                            </Suspense>
+                        </div>
+                        <div className={glassyBox}>
+                            <PortfolioLink />
+                        </div>
+                        <Suspense fallback={appsFallback}>
+                            <AppsGrid />
+                        </Suspense>
+                        <div className={glassyBox}>
+                            <Education />
+                        </div>
+                    </section>
+
+                    {/* Desktop: original 3-column poster layout */}
+                    <section className="hidden xl:grid xl:grid-cols-12 gap-8 items-start">
+                        <div className="xl:col-span-4 space-y-8">
                             <Drive />
                             <PortfolioLink />
-                            <Suspense
-                                fallback={
-                                    <div className="bg-neutral-900/60 backdrop-blur-sm rounded-2xl p-6 border border-white/5">
-                                        <p className="text-neutral-500 text-sm">
-                                            Loading apps…
-                                        </p>
-                                    </div>
-                                }
-                            >
+                            <Suspense fallback={appsFallback}>
                                 <AppsGrid />
                             </Suspense>
                         </div>
 
                         <ProfilePhoto />
 
-                        <div className="md:col-span-1 xl:col-span-4 space-y-10">
-                            <Suspense
-                                fallback={
-                                    <div className="text-right text-neutral-500 text-sm">
-                                        Loading skills…
-                                    </div>
-                                }
-                            >
+                        <div className="xl:col-span-4 space-y-10">
+                            <Suspense fallback={skillsFallback}>
                                 <SkillsList />
                             </Suspense>
                             <Journey />

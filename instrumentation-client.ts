@@ -7,7 +7,7 @@ posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
     capture_exceptions: true,
     debug: process.env.NODE_ENV === 'development',
     // GDPR: don't drop cookies or capture anything until the user accepts.
-    // The CookieConsent component flips these on via opt_in_capturing()
+    // The CookieConsent component flips these on via opt_in_capturing()`
     // + set_config({ persistence }) when consent is granted.
     persistence: 'memory',
     opt_out_capturing_by_default: true,

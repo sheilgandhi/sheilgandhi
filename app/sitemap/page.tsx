@@ -1,20 +1,72 @@
-import Link from 'next/link';
-import { ShieldCheck, ArrowUpRight } from 'lucide-react';
+import { ShieldCheck, Lock, Eye, Mail } from 'lucide-react';
 import Navbar from '@/components/navbar';
 
-const portfolioRoutes = [
-    {
-        path: '/blog',
-        description:
-            'Long-form writing — engineering, projects, and the lessons in between.',
-    },
-];
+const LAST_UPDATED = '2026-05-12';
 
-const protectedRoutes = [
-    'router.sheilgandhi.com',
-    'emby.sheilgandhi.com',
-    'qbit.sheilgandhi.com',
-    'nas.sheilgandhi.com',
+const sections = [
+    {
+        icon: ShieldCheck,
+        title: 'EDGE PROTECTION',
+        body: (
+            <>
+                All public traffic to <code>sheilgandhi.com</code> is fronted by{' '}
+                <strong>Cloudflare</strong> — TLS termination, DDoS mitigation,
+                and a Web Application Firewall sit between the public internet
+                and the origin. Bot traffic is rate-limited at the edge. The
+                origin itself is never directly exposed.
+            </>
+        ),
+    },
+    {
+        icon: Lock,
+        title: 'ZERO-TRUST INTERNAL SERVICES',
+        body: (
+            <>
+                Internal services I host privately are reachable only through{' '}
+                <strong>Cloudflare Tunnel</strong> (cloudflared) — an
+                outbound-only connection from the origin to Cloudflare&apos;s
+                edge. No inbound firewall ports are opened on my network, no
+                VPN is required, and every request must pass{' '}
+                <strong>Cloudflare Access</strong> identity verification before
+                it reaches the underlying service. Unauthenticated traffic is
+                dropped at the edge.
+            </>
+        ),
+    },
+    {
+        icon: Eye,
+        title: 'ANALYTICS & PRIVACY',
+        body: (
+            <>
+                Analytics are opt-in. On first visit a consent banner appears;
+                until you accept, no analytics cookies are written and no
+                events are sent. If you accept, I collect anonymous page views,
+                clicks, and uncaught errors via <strong>PostHog</strong>{' '}
+                routed through a first-party reverse proxy. I do not sell,
+                share, or trade visitor data. Session recordings are disabled.
+                You can revoke consent any time by clearing site data for this
+                domain.
+            </>
+        ),
+    },
+    {
+        icon: Mail,
+        title: 'RESPONSIBLE DISCLOSURE',
+        body: (
+            <>
+                If you find a security issue with anything on this domain,
+                please email{' '}
+                <a
+                    href="mailto:sheilgandhi24@hotmail.com"
+                    className="underline hover:text-[var(--accent-poster)]"
+                >
+                    sheilgandhi24@hotmail.com
+                </a>
+                . I appreciate responsible disclosure and will respond as soon
+                as I&apos;m able.
+            </>
+        ),
+    },
 ];
 
 export default function SitemapPage() {
@@ -32,83 +84,41 @@ export default function SitemapPage() {
                             MAP
                         </h1>
                         <p className="mt-4 text-sm tracking-[0.3em] text-muted-foreground font-semibold">
-                            EVERY DOOR ON THIS PROPERTY
+                            HOW THIS PROPERTY IS BUILT, RUN, AND PROTECTED
                         </p>
                     </section>
 
-                    <section className="mb-12">
-                        <h2 className="text-[var(--accent-poster)] text-sm font-bold tracking-widest mb-4">
-                            PORTFOLIO ROUTES
-                        </h2>
-                        <div className="space-y-3">
-                            {portfolioRoutes.map((r) => (
-                                <Link
-                                    key={r.path}
-                                    href={r.path}
-                                    className="group flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 bg-muted/40 backdrop-blur-sm rounded-2xl border border-border p-6 hover:border-[var(--accent-poster)] transition-colors"
-                                >
-                                    <span className="font-mono text-sm text-foreground group-hover:text-[var(--accent-poster)] transition-colors min-w-[8rem]">
-                                        {r.path}
-                                    </span>
-                                    <p className="text-sm text-muted-foreground flex-1">
-                                        {r.description}
-                                    </p>
-                                </Link>
-                            ))}
-                        </div>
-                    </section>
-
-                    <section>
-                        <h2 className="text-[var(--accent-poster)] text-sm font-bold tracking-widest mb-4">
-                            CLOUDFLARE PROTECTED ROUTES
-                        </h2>
-                        <div className="bg-muted/40 backdrop-blur-sm rounded-2xl border border-border p-6 mb-4">
-                            <div className="flex items-start gap-3">
-                                <ShieldCheck
-                                    className="h-5 w-5 flex-shrink-0 mt-0.5"
-                                    style={{
-                                        color: 'var(--accent-poster)',
-                                    }}
-                                />
-                                <p className="text-sm text-foreground/90 leading-relaxed">
-                                    These subdomains route through a{' '}
-                                    <strong>Cloudflare Tunnel</strong>{' '}
-                                    (cloudflared) — an outbound-only connection
-                                    that exposes self-hosted services from my
-                                    home network without opening any inbound
-                                    ports or running a VPN. Access is gated by
-                                    Cloudflare Access, so only authenticated
-                                    users get through the door.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="space-y-3">
-                            {protectedRoutes.map((host) => (
-                                <a
-                                    key={host}
-                                    href={`https://${host}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group flex items-center gap-4 bg-muted/40 backdrop-blur-sm rounded-2xl border border-border p-6 hover:border-[var(--accent-poster)] transition-colors"
-                                >
-                                    <ShieldCheck
-                                        className="h-4 w-4 flex-shrink-0"
+                    <section className="space-y-4">
+                        {sections.map(({ icon: Icon, title, body }) => (
+                            <article
+                                key={title}
+                                className="bg-muted/40 backdrop-blur-sm rounded-2xl border border-border p-6"
+                            >
+                                <div className="flex items-start gap-4">
+                                    <Icon
+                                        className="h-5 w-5 flex-shrink-0 mt-1"
                                         style={{
                                             color: 'var(--accent-poster)',
                                         }}
-                                        aria-label="Cloudflare Access protected"
-                                    />
-                                    <span className="font-mono text-sm text-foreground group-hover:text-[var(--accent-poster)] transition-colors flex-1">
-                                        {host}
-                                    </span>
-                                    <ArrowUpRight
-                                        className="h-4 w-4 flex-shrink-0 text-muted-foreground group-hover:text-[var(--accent-poster)] transition-colors"
                                         aria-hidden="true"
                                     />
-                                </a>
-                            ))}
-                        </div>
+                                    <div className="flex-1">
+                                        <h2 className="text-[var(--accent-poster)] text-sm font-bold tracking-widest mb-3">
+                                            {title}
+                                        </h2>
+                                        <p className="text-sm text-foreground/90 leading-relaxed">
+                                            {body}
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        ))}
                     </section>
+
+                    <p className="mt-8 text-xs text-muted-foreground">
+                        Last updated{' '}
+                        <time dateTime={LAST_UPDATED}>{LAST_UPDATED}</time>
+                    </p>
                 </div>
             </main>
         </>

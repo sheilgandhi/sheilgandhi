@@ -21,9 +21,6 @@ const Navbar = () => {
                 ))}
             </div>
             <div className="flex items-center gap-4">
-                <Link href="/family-tree">
-                    <span className="text-2xl font-bold">🌲</span>
-                </Link>
                 <ThemeToggle />
             </div>
         </div>

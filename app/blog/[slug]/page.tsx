@@ -3,29 +3,36 @@ import {
     type PortableTextReactComponents,
     type SanityDocument,
 } from 'next-sanity';
-import { client } from '@/sanity/lib/client';
-import Link from 'next/link';
 import { Image } from 'next-sanity/image';
-import Navbar from '@/components/navbar';
-import { urlFor } from '@/sanity/lib/image';
-import { Badge } from '@/components/ui/badge';
+import Link from 'next/link';
 import { ReactNode } from 'react';
+import Navbar from '@/components/navbar';
+import { client } from '@/sanity/lib/client';
+import { urlFor } from '@/sanity/lib/image';
 
 const styles: Partial<PortableTextReactComponents> = {
     types: {},
     marks: {},
     block: {
         h1: ({ children }: { children?: ReactNode }) => (
-            <h1 className="text-4xl font-bold">{children}</h1>
+            <h1 className="text-4xl font-bold text-foreground mt-10 mb-4">
+                {children}
+            </h1>
         ),
         h2: ({ children }: { children?: ReactNode }) => (
-            <h2 className="text-3xl font-semibold">{children}</h2>
+            <h2 className="text-3xl font-semibold text-foreground mt-8 mb-3">
+                {children}
+            </h2>
         ),
         h3: ({ children }: { children?: ReactNode }) => (
-            <h3 className="text-2xl font-medium">{children}</h3>
+            <h3 className="text-2xl font-medium text-foreground mt-6 mb-2">
+                {children}
+            </h3>
         ),
         normal: ({ children }: { children?: ReactNode }) => (
-            <p className="text-base">{children}</p>
+            <p className="text-base text-foreground/90 leading-relaxed my-4">
+                {children}
+            </p>
         ),
     },
 };
@@ -53,7 +60,7 @@ export default async function PostPage({
     const post = await client.fetch<SanityDocument>(
         POST_QUERY,
         await params,
-        options
+        options,
     );
     const postImageUrl = post.mainImage ? urlFor(post.mainImage)?.url() : null;
     const authorImageUrl = post.author
@@ -64,53 +71,87 @@ export default async function PostPage({
             month: 'long',
             day: 'numeric',
             year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true,
         }).format(new Date(dateString));
     };
 
     return (
-        <div className="page gap-8">
-            <Navbar />
-            <Link href="/blog" className="hover:underline">
-                ← Back to posts
-            </Link>
-            {postImageUrl && (
-                <Image
-                    src={postImageUrl}
-                    alt={post.mainImage.alt}
-                    className="w-full aspect-video rounded-xl"
-                    width="550"
-                    height="310"
-                />
-            )}
-            <h1 className="text-4xl font-bold">{post.title}</h1>
-            <div className="flex gap-4">
-                {post.categories &&
-                    post.categories.map((tag: string) => (
-                        <Badge key={tag} variant={'outline'}>
-                            {tag}
-                        </Badge>
-                    ))}
+        <>
+            <div className="bg-background py-8 px-12 md:px-48 lg:px-84">
+                <Navbar />
             </div>
-            <div className="flex flex-wrap items-center gap-4">
-                {authorImageUrl && (
-                    <Image
-                        src={authorImageUrl}
-                        alt={post.author.name}
-                        className="cover rounded-full"
-                        width={40}
-                        height={40}
-                    />
-                )}
-                <p>{post.author.name}</p>
-                <p className="hidden lg:inline-flex">|</p>
-                <p>Published: {formatDate(post.publishedAt)}</p>
-            </div>
-            {Array.isArray(post.body) && (
-                <PortableText value={post.body} components={styles} />
-            )}
-        </div>
+            <main className="relative min-h-screen bg-background text-foreground">
+                <article className="mx-auto max-w-7xl px-8 py-12 lg:px-16 lg:py-16">
+                    <Link
+                        href="/blog"
+                        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-[var(--accent-poster)] transition-colors mb-8"
+                    >
+                        ← Back to posts
+                    </Link>
+
+                    {post.categories?.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mb-6">
+                            {post.categories.map((tag: string) => (
+                                <span
+                                    key={tag}
+                                    className="text-xs font-semibold tracking-widest uppercase text-[var(--accent-poster)] border border-[var(--accent-poster)]/40 rounded-full px-3 py-1"
+                                >
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    )}
+
+                    <h1 className="text-4xl md:text-5xl font-black text-foreground leading-[1.05] mb-6">
+                        {post.title}
+                    </h1>
+
+                    <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-10">
+                        {authorImageUrl && post.author && (
+                            <Image
+                                src={authorImageUrl}
+                                alt={post.author.name}
+                                className="rounded-full object-cover"
+                                width={32}
+                                height={32}
+                            />
+                        )}
+                        {post.author && (
+                            <span className="text-foreground/90">
+                                {post.author.name}
+                            </span>
+                        )}
+                        {post.author && post.publishedAt && (
+                            <span aria-hidden>·</span>
+                        )}
+                        {post.publishedAt && (
+                            <time dateTime={post.publishedAt}>
+                                {formatDate(post.publishedAt)}
+                            </time>
+                        )}
+                    </div>
+
+                    {postImageUrl && (
+                        <div className="aspect-video rounded-2xl overflow-hidden border border-border mb-10">
+                            <Image
+                                src={postImageUrl}
+                                alt={post.mainImage?.alt ?? post.title}
+                                className="w-full h-full object-cover"
+                                width={1280}
+                                height={720}
+                            />
+                        </div>
+                    )}
+
+                    {Array.isArray(post.body) && (
+                        <div>
+                            <PortableText
+                                value={post.body}
+                                components={styles}
+                            />
+                        </div>
+                    )}
+                </article>
+            </main>
+        </>
     );
 }

@@ -1,7 +1,7 @@
-import { urlFor } from '@/sanity/lib/image';
-import { SanityDocument } from 'next-sanity';
 import Image from 'next/image';
-import { Badge } from '../ui/badge';
+import Link from 'next/link';
+import { SanityDocument } from 'next-sanity';
+import { urlFor } from '@/sanity/lib/image';
 
 export default function FeaturedPost({
     post,
@@ -17,29 +17,41 @@ export default function FeaturedPost({
         : null;
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border rounded-lg shadow-lg overflow-hidden w-full">
-            <Image
-                src={image ?? ''}
-                alt={post.mainImage.alt}
-                objectFit="contain"
-                width={1920}
-                height={1080}
-                className="object-cover  group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="p-4 flex flex-col gap-4">
-                <div className="flex gap-2">
-                    {post.categories &&
-                        post.categories.map((tag: string) => (
-                            <Badge key={tag} variant={'destructive'}>
-                                {tag}
-                            </Badge>
-                        ))}
+        <Link
+            href={`/blog/${post.slug.current}`}
+            className="group grid grid-cols-1 md:grid-cols-2 gap-0 bg-muted/40 backdrop-blur-sm rounded-2xl border border-border overflow-hidden hover:border-[var(--accent-poster)] transition-colors"
+        >
+            {image && (
+                <div className="aspect-video md:aspect-auto md:h-full overflow-hidden">
+                    <Image
+                        src={image}
+                        alt={post.mainImage?.alt ?? post.title}
+                        width={1920}
+                        height={1080}
+                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                    />
                 </div>
-                <h2 className="text-2xl font-bold">{post.title}</h2>
-                <p className="text-sm text-muted-foreground">
+            )}
+            <div className="p-8 flex flex-col gap-4 justify-center">
+                {post.categories?.length > 0 && (
+                    <div className="flex flex-wrap gap-2">
+                        {post.categories.map((tag: string) => (
+                            <span
+                                key={tag}
+                                className="text-xs font-semibold tracking-widest uppercase text-[var(--accent-poster)] border border-[var(--accent-poster)]/40 rounded-full px-3 py-1"
+                            >
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                )}
+                <h3 className="text-3xl font-bold text-foreground leading-tight">
+                    {post.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
                     {post.previewText}
                 </p>
             </div>
-        </div>
+        </Link>
     );
 }

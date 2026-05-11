@@ -1,3 +1,4 @@
+'use client';
 import {
     DocumentPdfIcon,
     GithubIcon,
@@ -7,6 +8,7 @@ import {
 import { ArrowDown } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
+import posthog from 'posthog-js';
 
 const links = [
     {
@@ -40,6 +42,7 @@ const Socials = () => {
                 <Link
                     href="/resume"
                     className="flex items-center gap-4 border-2 rounded-xl p-2 cursor-pointer"
+                    onClick={() => posthog.capture('social_link_clicked', { link: 'resume' })}
                 >
                     Resume
                     <DocumentPdfIcon fontSize={28} />
@@ -51,6 +54,7 @@ const Socials = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="border-2 rounded-xl p-2 hover:animate-pulse"
+                        onClick={() => posthog.capture('social_link_clicked', { link: link.name })}
                     >
                         {link.icon}
                     </Link>

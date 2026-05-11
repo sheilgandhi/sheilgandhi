@@ -28,7 +28,13 @@ export default async function ProfilePhoto() {
     );
 
     const src = data?.photo?.asset
-        ? urlFor(data.photo).width(320).height(640).url()
+        ? urlFor(data.photo)
+              .width(1280)
+              .height(2560)
+              .fit('crop')
+              .auto('format')
+              .quality(95)
+              .url()
         : FALLBACK_PHOTO;
     const alt = data?.photo?.alt ?? 'Sheil Gandhi';
     const isCustomPhoto = Boolean(data?.photo?.asset);
@@ -49,10 +55,11 @@ export default async function ProfilePhoto() {
                         <Image
                             src={src}
                             alt={alt}
-                            width={320}
-                            height={640}
+                            width={640}
+                            height={1280}
                             priority
                             loading="eager"
+                            unoptimized
                             className="w-full h-full object-cover object-top scale-125 origin-top -translate-y-16"
                         />
                     </div>

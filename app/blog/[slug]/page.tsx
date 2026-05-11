@@ -9,6 +9,7 @@ import { ReactNode } from 'react';
 import Navbar from '@/components/navbar';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
+import BlogPostViewTracker from '@/components/blog/BlogPostViewTracker';
 
 const styles: Partial<PortableTextReactComponents> = {
     types: {},
@@ -57,9 +58,10 @@ export default async function PostPage({
 }: {
     params: Promise<{ slug: string }>;
 }) {
+    const { slug } = await params;
     const post = await client.fetch<SanityDocument>(
         POST_QUERY,
-        await params,
+        { slug },
         options,
     );
     const postImageUrl = post.mainImage ? urlFor(post.mainImage)?.url() : null;
@@ -76,6 +78,12 @@ export default async function PostPage({
 
     return (
         <>
+            <BlogPostViewTracker
+                title={post.title}
+                slug={slug}
+                categories={post.categories}
+                author={post.author?.name}
+            />
             <div className="bg-background py-8 px-12 md:px-48 lg:px-84">
                 <Navbar />
             </div>

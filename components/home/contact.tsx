@@ -3,6 +3,7 @@ import { ComponentType, CSSProperties } from 'react';
 import { client } from '@/sanity/lib/client';
 import { accent } from './constants';
 import LinkedinIcon from './linkedin-icon';
+import ContactLink from './contact-link';
 
 type IconComponent = ComponentType<{
     className?: string;
@@ -78,19 +79,12 @@ export default async function Contact() {
                                 style={{ color: accent }}
                             />
                             {href ? (
-                                <a
+                                <ContactLink
                                     href={href}
-                                    className="hover:text-foreground"
-                                    target={external ? '_blank' : undefined}
-                                    rel={
-                                        external
-                                            ? 'noopener noreferrer'
-                                            : undefined
-                                    }
-                                    download={download ? '' : undefined}
-                                >
-                                    {label}
-                                </a>
+                                    label={label}
+                                    external={external}
+                                    download={download}
+                                />
                             ) : (
                                 label
                             )}

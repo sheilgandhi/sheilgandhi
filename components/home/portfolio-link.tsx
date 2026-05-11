@@ -1,9 +1,13 @@
+'use client';
 import Link from 'next/link';
 import GithubIcon from './github-icon';
+import posthog from 'posthog-js';
 
 const GITHUB_URL = 'https://github.com/sheilgandhi';
 
 export default function PortfolioLink() {
+    const handleClick = () => posthog.capture('portfolio_link_clicked', { destination: GITHUB_URL });
+
     return (
         <div className="flex items-start gap-4">
             <Link
@@ -12,6 +16,7 @@ export default function PortfolioLink() {
                 rel="noopener noreferrer"
                 aria-label="GitHub portfolio"
                 className="flex-shrink-0 inline-flex items-center justify-center h-14 w-14 rounded-xl bg-foreground border border-border hover:border-[var(--accent-poster)] transition-colors"
+                onClick={handleClick}
             >
                 <GithubIcon className="h-7 w-7 text-background" />
             </Link>
@@ -22,6 +27,7 @@ export default function PortfolioLink() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-xs text-muted-foreground underline hover:text-[var(--accent-poster)]"
+                    onClick={handleClick}
                 >
                     github.com/sheilgandhi
                 </a>

@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { SanityDocument } from 'next-sanity';
 import { urlFor } from '@/sanity/lib/image';
+import BlogPostLink from './BlogPostLink';
 
 export default function FeaturedPost({
     post,
@@ -17,8 +17,9 @@ export default function FeaturedPost({
         : null;
 
     return (
-        <Link
+        <BlogPostLink
             href={`/blog/${post.slug.current}`}
+            title={post.title}
             className="group grid grid-cols-1 md:grid-cols-2 gap-0 bg-muted/40 backdrop-blur-sm rounded-2xl border border-border overflow-hidden hover:border-[var(--accent-poster)] transition-colors"
         >
             {image && (
@@ -52,6 +53,6 @@ export default function FeaturedPost({
                     {post.previewText}
                 </p>
             </div>
-        </Link>
+        </BlogPostLink>
     );
 }

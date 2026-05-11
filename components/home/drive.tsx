@@ -9,7 +9,7 @@ export default function Drive() {
     return (
         <div className="bg-muted/40 backdrop-blur-sm rounded-2xl p-6 border border-border">
             <h2 className="text-2xl font-bold text-foreground mb-4">
-                AMBITIOUS <span style={{ color: accent }}>DRIVE</span>
+                NATIVE & <span style={{ color: accent }}>FRONTEND</span>
             </h2>
             <ul className="list-none space-y-1 mb-5">
                 {stats.map((stat) => (

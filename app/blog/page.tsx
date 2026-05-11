@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { type SanityDocument } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
 import Navbar from '@/components/navbar';
 import FeaturedPost from '@/components/blog/FeaturedPost';
+import BlogPostLink from '@/components/blog/BlogPostLink';
 
 const POSTS_QUERY = `*[
   _type == "post"
@@ -63,9 +63,10 @@ export default async function Blog() {
                                           .url()
                                     : null;
                                 return (
-                                    <Link
+                                    <BlogPostLink
                                         key={post._id}
                                         href={`/blog/${post.slug.current}`}
+                                        title={post.title}
                                         className="group flex flex-col bg-muted/40 backdrop-blur-sm rounded-2xl border border-border overflow-hidden hover:border-[var(--accent-poster)] transition-colors"
                                     >
                                         {postImageUrl && (
@@ -105,7 +106,7 @@ export default async function Blog() {
                                                 </div>
                                             )}
                                         </div>
-                                    </Link>
+                                    </BlogPostLink>
                                 );
                             })}
                         </div>

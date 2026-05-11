@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { client } from '@/sanity/lib/client';
 import { urlFor } from '@/sanity/lib/image';
+import AppLink from './app-link';
 
 type AppImage = {
     _key: string;
@@ -51,13 +52,9 @@ export default async function AppsGrid() {
                                 className="flex items-center justify-center h-12"
                             >
                                 {app.url ? (
-                                    <a
-                                        href={app.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
+                                    <AppLink url={app.url} alt={app.alt}>
                                         {logo}
-                                    </a>
+                                    </AppLink>
                                 ) : (
                                     logo
                                 )}

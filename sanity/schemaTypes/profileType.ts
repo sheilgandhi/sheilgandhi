@@ -8,6 +8,21 @@ export const profileType = defineType({
     icon: UserIcon,
     fields: [
         defineField({
+            name: 'photo',
+            title: 'Hero Photo',
+            type: 'image',
+            description:
+                'The portrait shown on the home page poster (centre column at xl+).',
+            options: { hotspot: true },
+            fields: [
+                defineField({
+                    name: 'alt',
+                    type: 'string',
+                    title: 'Alt text',
+                }),
+            ],
+        }),
+        defineField({
             name: 'resume',
             title: 'Resume',
             type: 'file',

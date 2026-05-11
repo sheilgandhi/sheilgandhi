@@ -53,7 +53,7 @@ export default async function ProfilePhoto() {
                             height={640}
                             priority
                             loading="eager"
-                            className="w-full h-full object-cover object-top scale-110 origin-top"
+                            className="w-full h-full object-cover object-top scale-125 origin-top -translate-y-16"
                         />
                     </div>
                 ) : (

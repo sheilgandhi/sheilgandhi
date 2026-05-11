@@ -18,16 +18,15 @@ type Contact = {
     download?: boolean;
 };
 
-const RESUME_QUERY = `*[_type == "profile"][0]{ "url": resume.asset->url, resume }`;
-const options = { next: { revalidate: 0 } };
+const RESUME_QUERY = `*[_type == "profile"][0]{ "url": resume.asset->url }`;
+const options = { next: { revalidate: 30 } };
 
 export default async function Contact() {
-    const resume = await client.fetch<{
-        url?: string;
-        resume?: unknown;
-    } | null>(RESUME_QUERY, {}, options);
-
-    console.log('[Contact] resume query result:', JSON.stringify(resume, null, 2));
+    const resume = await client.fetch<{ url?: string } | null>(
+        RESUME_QUERY,
+        {},
+        options,
+    );
 
     const contacts: Contact[] = [
         ...(resume?.url

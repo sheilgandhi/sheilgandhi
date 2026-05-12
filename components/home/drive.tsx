@@ -23,11 +23,19 @@ export default function Drive() {
             </ul>
             <p className="text-muted-foreground text-sm leading-relaxed">
                 I&apos;m working as a Senior Frontend Engineer @ HHM Global
-                Group (a.k.a. MOBI HQ or mobi2go). In my tenure, I migrated
-                legacy projects, shipped multi-tenant mobile apps, and hired and
-                mentored engineers. Now, I&apos;m focused on building a new
-                Native app to better serve our clients operationally with
-                improved analytics.
+                Group (a.k.a.{' '}
+                <a
+                    href="https://www.mobihq.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-[var(--accent-poster)] transition-colors"
+                >
+                    MOBI HQ
+                </a>{' '}
+                or mobi2go). In my tenure, I migrated legacy projects, shipped
+                multi-tenant mobile apps, and hired and mentored engineers.
+                Now, I&apos;m focused on building a new Native app to better
+                serve our clients operationally with improved analytics.
             </p>
         </div>
     );

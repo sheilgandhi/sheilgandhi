@@ -10,7 +10,7 @@ type AppImage = {
     asset: { _ref: string };
 };
 
-const APPS_QUERY = `*[_type == "profile"][0].apps[]{
+const APPS_QUERY = `*[_type == "profile"][0].apps[defined(asset)]{
     _key,
     alt,
     url,
@@ -36,14 +36,14 @@ export default async function AppsGrid() {
             ) : (
                 <div className="grid grid-cols-4 gap-x-6 gap-y-5 items-center justify-items-center">
                     {apps.map((app) => {
-                        const src = urlFor(app).width(160).height(80).url();
+                        const src = urlFor(app).width(320).fit('max').url();
                         const logo = (
                             <Image
                                 src={src}
                                 alt={app.alt ?? 'App'}
-                                width={80}
-                                height={40}
-                                className="object-contain h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                                width={160}
+                                height={80}
+                                className="object-contain h-10 w-auto opacity-70 contrast-125 hover:opacity-100 transition-opacity invert dark:invert-0"
                             />
                         );
                         return (

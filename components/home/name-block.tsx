@@ -1,3 +1,5 @@
+import { MapPin } from 'lucide-react';
+
 export default function NameBlock() {
     return (
         <div className="xl:col-span-8 relative">
@@ -8,6 +10,10 @@ export default function NameBlock() {
             </h1>
             <p className="mt-4 text-sm tracking-[0.3em] text-muted-foreground font-semibold">
                 SOFTWARE ENGINEER
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground flex items-center gap-2">
+                <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                Toronto, Canada
             </p>
         </div>
     );

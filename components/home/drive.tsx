@@ -22,10 +22,12 @@ export default function Drive() {
                 ))}
             </ul>
             <p className="text-muted-foreground text-sm leading-relaxed">
-                Engineer with a passion for learning new skills. Proven track
-                record of migrating projects and delivering multi-tenant mobile
-                apps at scale. Experienced in hiring, with a focus on raising
-                the bar. Currently learning analytics.
+                I&apos;m working as a Senior Frontend Engineer @ HHM Global
+                Group (a.k.a. MOBI HQ or mobi2go). In my tenure, I migrated
+                legacy projects, shipped multi-tenant mobile apps, and hired and
+                mentored engineers. Now, I&apos;m focused on building a new
+                Native app to better serve our clients operationally with
+                improved analytics.
             </p>
         </div>
     );

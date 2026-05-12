@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Map, FileText } from 'lucide-react';
+import { Mail, Phone, Map, FileText } from 'lucide-react';
 import { ComponentType, CSSProperties } from 'react';
 import { client } from '@/sanity/lib/client';
 import { accent } from './constants';
@@ -55,10 +55,6 @@ export default async function Contact() {
             label: 'linkedin.com/in/sheilgandhi',
             href: 'https://linkedin.com/in/sheilgandhi',
             external: true,
-        },
-        {
-            icon: MapPin,
-            label: 'Toronto, Canada',
         },
         {
             icon: Map,
